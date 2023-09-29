@@ -1,0 +1,294 @@
+{
+  "discomfortLevels": [
+    {
+      "level": 1,
+      "description": "No problem with activity: takes about same time as most people; no need to repeat it, and/or avoids it"
+    },
+    {
+      "level": 2,
+      "description": "Minor problems with activity: takes a little longer than most people, may repeat it a few times, and/or sometimes avoids it"
+    },
+    {
+      "level": 3,
+      "description": "Moderate problems with activity: takes moderately longer than most people, often repeats it numerous times, and/or often avoids it"
+    },
+    {
+      "level": 4,
+      "description": "Very often has problems with activity: takes much longer than most people; frequently repeats it many times, and/or frequently avoids it"
+    },
+    {
+      "level": 5,
+      "description": "Almost constant problems with activity: takes very long compared to most people or unable to complete it; almost always repeats it an extreme number of times or almost always avoids it"
+    }
+  ],
+  "themes": [
+    {
+      "title": "Decontamination Compulsions",
+      "compulsions": [
+        "Washing your hands ritually and/or excessively",
+        "Bathing, or showering ritually and/or excessively",
+        "Disinfecting yourself",
+        "Brushing your teeth to remove contamination",
+        "Disinfecting others or having them disinfect themselves",
+        "Disinfecting and/or cleaning your environment or your possessions",
+        "Washing or cleaning items before they can be used or allowed in the house",
+        "Changing or having others change clothing frequently to avoid contamination",
+        "Discarding or destroying potentially contaminated items",
+        "Wiping, blowing on, or shaking out items before using them",
+        "Avoidance of certain foods which may be contaminated",
+        "Avoidance of specific persons, places, or objects which might be contaminated",
+        "Using gloves, paper, etc. to touch things",
+        "Having family or friends perform any of the previous compulsions on your behalf",
+        "Performing, reciting, or thinking ritually to avoid or remove contamination",
+        "Excessive questioning of others about contamination",
+        "Using public telephones",
+        "Touching door handles in public places",
+        "Handling or cooking food",
+        "Washing dishes",
+        "Washing clothing",
+        "Handling money",
+        "Handling garbage or waste baskets",
+        "Traveling on public transportation (buses, trains, taxis, etc.)",
+        "Using toilet to urinate",
+        "Using toilet to defecate",
+        "Using public restrooms",
+        "Visiting a hospital",
+        "Eating in restaurants",
+        "Going to movies"
+      ]
+    },
+    {
+      "title": "Checking Compulsions",
+      "compulsions": [
+        "Doors and windows",
+        "Water taps",
+        "Electrical appliances",
+        "Stoves",
+        "Light switches",
+        "Car doors, windows, headlights, etc.",
+        "Items to be mailed or mailboxes",
+        "Whereabouts of sharp objects",
+        "Extinguished cigarettes or matches",
+        "The arrangement of objects for symmetry or perfection",
+        "Surfaces or objects for marks or damage",
+        "Objects, surfaces, or your own body parts for contamination",
+        "Repetitive praying or crossing yourself",
+        "What you have read",
+        "Your paperwork or writing for errors",
+        "Your writing for obscenities or errors",
+        "Filling out forms",
+        "Doing arithmetic",
+        "Counting money and/or making change",
+        "Driving situations (to verify that you did not hit someone or something with a vehicle)",
+        "Your own or another's vital signs or body (for signs of illness)",
+        "For possible hazards to children",
+        "The possibility that unspecified harm will occur to yourself or others",
+        "Frequent phone calls to family and loved one’s to insure they are safe",
+        "The possibility that you may have harmed yourself or others accidentally or through negligence",
+        "Whether or not someone has acted sexually toward you",
+        "Whether or not you have acted sexually toward someone else",
+        "For prowlers (in closets, under bed, etc.)",
+        "For objects dropped accidentally",
+        "That valuable items were not accidentally thrown away",
+        "That you haven’t left anything behind when you leave any place",
+        "Container tops or lids for closure",
+        "That one did not injure another through negligence",
+        "Your own words or actions (to verify that you did not act inappropriately)",
+        "Your own memory (by asking yourself or others)",
+        "That you have made the perfect decision",
+        "Repetitively apologizing or asking for forgiveness",
+        "That you have not touched something hazardous or contaminated",
+        "Yourself or your environment for signs of contamination",
+        "For sources of dangerous gases or fumes",
+        "That you have not ingested foods which are unhealthy or forbidden",
+        "Your food or drink for drugs or chemicals put there by others or by accident",
+        "Your phone for eavesdroppers",
+        "Following your spouse or lover to make sure they are being faithful",
+        "The mail or phone usage of your spouse or lover to make sure they are being faithful",
+        "Questioning the whereabouts of your spouse or lover to make sure they are being faithful",
+        "Watching who your spouse or lover looks at ( in public or in movies, TV, and magazines) to make sure they are not being unfaithful"
+      ]
+    },
+    {
+      "title": "Magical/Undoing Compulsions",
+      "compulsions": [
+        "Reciting or thinking of certain words, names, sounds, phrases, numbers, or images",
+        "Moving your body or gesturing in a special way",
+        "Having to mentally arrange certain images numbers, words, names, etc.",
+        "Having to physically arrange objects in your environment in special ways",
+        "Stepping in special ways or on special spots when walking",
+        "Repeating an activity with a good thought or image in mind",
+        "Performing actions or movements in reverse",
+        "Washing off ideas or thoughts",
+        "Rethinking thoughts",
+        "Thinking thoughts in reverse",
+        "Having to eat or not eat certain foods",
+        "Gazing at or thinking of certain numbers or words to cancel others out",
+        "Gazing at objects in a special way",
+        "Touching certain things in a special way"
+      ]
+    },
+    {
+      "title": "Perfectionistic Compulsions",
+      "compulsions": [
+        "Arrange objects or possessions in special or symmetrical ways",
+        "Keep new possessions unused and in perfect condition",
+        "Buy only items which are perfect",
+        "Keep your home or living space perfectly clean and orderly",
+        "Putting laundry away",
+        "Avoid using rooms, closets, drawers, etc., once they have been arranged perfectly",
+        "Keep your possessions perfectly neat and clean",
+        "Having items in drawers, closets or cabinets perfectly and neatly arranged",
+        "Say things perfectly",
+        "Remember or memorize things perfectly or in a special order",
+        "Read or reread every word in a document to avoid missing anything",
+        "Know or learn everything about a particular subject",
+        "Keep remaking decisions to ensure picking the perfect one",
+        "Rewrite or write over numbers or letters to make them perfect",
+        "Perform ordinary activities extra slowly to get them done perfectly",
+        "Think of certain things perfectly or exactly",
+        "Be perfectly religious",
+        "Punish or penalize yourself when you do not behave perfectly",
+        "Be perfectly self-denying",
+        "Look at certain things in the environment in a special or perfect way (visually tracing or lining them up, etc.)",
+        "Be perfectly aware of everything going on around you in your environment",
+        "Tell the truth or be perfectly honest",
+        "Perfectly confess about all your thoughts or behaviors to others",
+        "Confess to having done wrongful things whether you have done them or not",
+        "Make one's appearance perfect (e.g. hair, nails, clothes, makeup, etc.)",
+        "Cut your hair (to make it perfect or symmetrical",
+        "Perform activities until they feel just right",
+        "Keep extensive lists or records of certain things",
+        "Only perform certain activities at perfect times"
+      ]
+    },
+    {
+      "title": "Counting Compulsions",
+      "compulsions": [
+        "While performing certain activities",
+        "Repeating behaviors a special number of times",
+        "Performing behaviors an odd or even number of times",
+        "To ensure an activity has been done a certain number of times or for a long enough duration",
+        "To ensure that an activity has been done an odd or even number of times",
+        "The numbers of objects or occurrences of certain things in the environment",
+        "Up to or beyond certain numbers",
+        "Simply to count (unconnected with any special idea or activity)",
+        "The occurrences of certain body functions (e.g., breathing, steps, etc.)"
+      ]
+    },
+    {
+      "title": "Touching or Movement Compulsions",
+      "compulsions": [
+        "Gesture or pose in a special way",
+        "Look or glance at something in a special way",
+        "Move in symmetrical or special ways",
+        "Having to step in special ways or on special spots when walking",
+        "Tic, twitch, or grimace in a special way",
+        "Move in special ways while carrying out certain activities",
+        "Reverse movements you have just made",
+        "Repeat certain activities (e.g., sitting down, getting up, passing through doorways) or by certain locations) a special number of times, or until they feel right",
+        "Touch furniture before sitting down or standing up",
+        "Touch doors or drawers before opening or closing them",
+        "Touch the edges or certain parts of things",
+        "Touch doorways before walking through them",
+        "Touch things a certain number of times",
+        "Touch things in special patterns",
+        "Touch, move, or handle possessions a certain way before using them"
+      ]
+    },
+    {
+      "title": "Mental Compulsions",
+      "compulsions": [
+        "Make mental maps of places",
+        "Memorize facts or information",
+        "Make mental lists or arrangements",
+        "Know or learn everything about a particular subject",
+        "Keep reviewing past situations to try to remember or understand them",
+        "Think specific thoughts in special ways",
+        "Think about specific topics",
+        "Create specific mental images or pictures",
+        "Repeat your own or someone else's words in your mind",
+        "Think of sequences of special numbers or words",
+        "Rethink specific thoughts",
+        "Think certain thoughts in reverse",
+        "Analyzing your thoughts to determine if they are (or were) appropriate",
+        "Analyzing your thoughts to determine if they are really compulsions or not",
+        "Checking your own memory to determine if you came to harm in the past",
+        "Whether your own thoughts or reactions indicate that you are sexually attracted to others in ways which are inappropriate to you"
+      ]
+    },
+    {
+      "title": "Protective Compulsions",
+      "compulsions": [
+        "Questioning others, or your own memory, to determine if you have harmed or insulted someone (recently or in the past)",
+        "Recording and collecting information about past events to help in determining if harm occurred to yourself or others in the past",
+        "Collecting and removing objects from the environment that could harm others (i.e., tacks, razor blades, nails, matches, lit cigarettes, glass, etc.)",
+        "Difficulty using sharp instruments (knives, scissors, etc.)",
+        "Checking on the whereabouts of others to be certain that harm has not occurred to them",
+        "Trying to limit the activities of others to prevent harm from happening to them",
+        "Warning others repeatedly of potential harm or danger",
+        "Asking others if you will be safe or if things will turn out well for you",
+        "Asking others if they will be safe or if things will turn out well for them",
+        "Confessing to having done things you believe may have harmed others",
+        "List making"
+      ]
+    },
+    {
+      "title": "Body-Focused Compulsions",
+      "compulsions": [
+        "Checking your appearance in the mirror for problems or imperfections",
+        "Checking your appearance or physical reaction to assure yourself about your sexual identity",
+        "Choosing what clothes to wear",
+        "Questioning others directly or indirectly about your appearance",
+        "Seeking frequent medical consultations to check on your appearance",
+        "Having to have your appearance improved surgically",
+        "Your body for symmetry or perfection",
+        "Your appearance or grooming for symmetry or perfection",
+        "Cutting your hair to excess or for long periods of time to make it perfect",
+        "Washing your hair to make it perfect",
+        "Checking your body for a bad odor (e.g. breath, genital, armpits, etc.)",
+        "Picking or squeezing pimples or blemishes to make your skin perfect",
+        "Checking the way your body works",
+        "Seeking medical consultations for possible illnesses",
+        "Reading about illnesses in books or on the internet",
+        "Self examination of your body for lumps or marks that could mean you have an illness",
+        "Frequent examination of current symptoms of possible illness",
+        "Having family examine you for signs of possible illness",
+        "Discussing symptoms of possible illness with family and friends",
+        "Taking your temperature"
+      ]
+    },
+    {
+      "title": "Hoarding/Collecting Compulsions/Impulsions",
+      "compulsions": [
+        "Saving broken, irreparable, or useless items",
+        "Buying excessive quantities of items beyond an amount needed for reasonable usage",
+        "Retrieving from or searching through your own or other people's trash",
+        "Inability to throw things out due to fear of accidentally throwing important items away",
+        "Going to excessive lengths (including extreme self-denial) to save money",
+        "Saving excessive quantities of informational matter (newspapers, old lists, magazines, junk mail, etc.)",
+        "Saving items simply because they belong to yourself or loved ones",
+        "Having to own complete collections of certain things, even if not important",
+        "Keeping extensive lists or records of certain things"
+      ]
+    },
+    {
+      "title": "Grooming Impulsions",
+      "compulsions": [
+        "Hair pulling (from head, eyebrows, eyelashes, pubic area, body, etc.)",
+        "Skin picking or biting",
+        "Nail or cuticle biting, picking, or cutting",
+        "Picking or squeezing pimples or blemishes for the sensation of it"
+      ]
+    },
+    {
+      "title": "Self-Mutilative Impulsions",
+      "compulsions": [
+        "Cutting or scratching yourself",
+        "Burning yourself",
+        "Poking yourself in the eyes",
+        "Biting yourself (e.g., insides of cheeks)"
+      ]
+    }
+  ]
+}

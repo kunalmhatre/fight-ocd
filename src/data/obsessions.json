@@ -1,0 +1,204 @@
+{
+  "discomfortLevels": [
+    {
+      "level": 1,
+      "description": "This thought does not trouble me at all"
+    },
+    {
+      "level": 2,
+      "description": "This thought rarely troubles me (once a week or less)"
+    },
+    {
+      "level": 3,
+      "description": "This thought often troubles me (several times weekly)"
+    },
+    {
+      "level": 4,
+      "description": "This thought troubles me very often (daily)"
+    },
+    {
+      "level": 5,
+      "description": "This thought troubles me continually (all waking hours)"
+    }
+  ],
+  "themes": [
+    {
+      "title": "Aggressive Obsessions",
+      "obsessions": [
+        "Actively harming others intentionally",
+        "Harming yourself intentionally",
+        "Going crazy and harming others",
+        "Violent or repulsive images, thoughts or words",
+        "Blurting out obscenities or insults",
+        "Making embarrassing or obscene gestures",
+        "Writing obscenities",
+        "Acting out in antisocial ways in public",
+        "Having insulted or offended others",
+        "Acting on impulses to rob, steal from, take advantage of, or cheat others",
+        "Rejecting, divorcing, or being unfaithful to a loved one",
+        "Deliberately hoping that others will have accidents, become ill or die"
+      ]
+    },
+    {
+      "title": "Sexual Obsessions",
+      "obsessions": [
+        "Forbidden or perverse thoughts, images or impulses",
+        "Sex with children",
+        "Sex with animals",
+        "Incest",
+        "Being homosexual or acting homosexually",
+        "Doubt about your sexual identity",
+        "Sex with religious figures or celebrities",
+        "Acting sexually toward others",
+        "Doubt about possibly having acted sexually toward others",
+        "Doubt about possibly having been acted upon sexually by others"
+      ]
+    },
+    {
+      "title": "Contamination Obsessions",
+      "obsessions": [
+        "Bodily waste or secretions, e.g. feces, urine, saliva, perspiration, blood, semen",
+        "Dirt or grime",
+        "Germs, or viruses",
+        "Environmental contaminants (asbestos, lead, radiation, toxic wastes, etc.)",
+        "Household chemicals (cleansers, solvents, drain openers, insecticides)",
+        "Auto exhaust or other poisonous gases",
+        "Garbage, refuse, or their containers",
+        "Grease or greasy items",
+        "Sticky substances",
+        "Medication, or the effects of having ingested medication in the past",
+        "Your food or drink having been adulterated or tampered with by others",
+        "Broken glass",
+        "Poisonous plants",
+        "Contact with live animals",
+        "Contact with dead animals",
+        "Contact with insects",
+        "Contact with other people",
+        "Contact with unclean or shabby looking people",
+        "Contracting an unspecified illness",
+        "Contracting an specific illness",
+        "Spreading illness to, or contaminating others",
+        "Hospitals, doctor's offices and health care workers",
+        "Leaving or spreading an essence or trace of yourself behind on objects or others",
+        "Being contaminated by thoughts of harm happening to yourself or others",
+        "A specific person, or place felt to be contaminated in some nonspecific way",
+        "Being contaminated by certain words",
+        "Being contaminated by the names of certain illnesses",
+        "Being contaminated by seeing an ill or disabled person",
+        "Being contaminated by the memory of a person who has died",
+        "Being contaminated by certain numbers or their multiples",
+        "Being contaminated by certain colors",
+        "Your belongings being contaminated by having been present or used when something unpleasant was occurring",
+        "Being contaminated by evil or the devil"
+      ]
+    },
+    {
+      "title": "Religious Obsessions",
+      "obsessions": [
+        "Being deliberately sinful or blasphemous",
+        "Doubtful thoughts as to whether you acted sinfully or blasphemously in the past",
+        "Fears of having acted sinfully or unethically",
+        "Doubting your faith or beliefs",
+        "Unacceptable thoughts about religious figures, religion, or deities",
+        "Thoughts of being possessed",
+        "Thoughts of having to be perfectly religious"
+      ]
+    },
+    {
+      "title": "Obsessions of Harm, Danger, Loss, or Embarrassment",
+      "obsessions": [
+        "Having an accident, illness or being injured",
+        "An accident, illness or injury happening to someone else",
+        "Accidentally losing control and harming others",
+        "Accidentally losing control and harming self",
+        "Causing harm to others through your own negligence or carelessness",
+        "Causing harm to others through my thoughts",
+        "Causing harm to self through your own negligence or carelessness",
+        "Causing harm to self through my thoughts",
+        "Never being able to be happy, or never being able to get what you want in life",
+        "Doubt about whether you somehow harmed or injured others in the past",
+        "Being deliberately harmed by others",
+        "Being rejected by a loved one",
+        "Being cheated or taken advantage of by others",
+        "Having somehow cheated or taken advantage of others",
+        "Having insulted or offended others",
+        "Objects in the environment having been moved or changed in unexplainable ways",
+        "Damage or theft of property",
+        "Losing or misplacing property",
+        "Forgetting information (memories, facts, appointments, etc.)",
+        "Being trapped in an unsatisfactory life or relationship",
+        "Being looked at or noticed by others in a critical way",
+        "Acting inappropriately in public",
+        "Your own mortality",
+        "The mortality of your family and friends",
+        "Your children not being your own"
+      ]
+    },
+    {
+      "title": "Superstitious or Magical Obsessions",
+      "obsessions": [
+        "Having bad luck",
+        "Bad luck happening to someone else",
+        "Lucky or unlucky numbers or their multiples",
+        "Lucky or unlucky colors",
+        "Lucky or unlucky objects or possessions",
+        "The possibility that thinking or hearing of bad events can make them occur to yourself others",
+        "Certain words names, or images being able to cause bad luck",
+        "Certain actions or behaviors being able to cause bad luck",
+        "Being possessed",
+        "Places, objects or people associated with unlucky occasions causing bad luck by contact",
+        "The need to perform certain activities a special number of times",
+        "Lucky or unlucky mental arrangements of things"
+      ]
+    },
+    {
+      "title": "Health and Body-Focused Obsessions",
+      "obsessions": [
+        "Parts of your body are ugly or disfigured in some way",
+        "Your body gives off a bad odor (e.g., breath, armpits, genital, etc)",
+        "Your body has scars or marks",
+        "Question how certain parts of your body work or function",
+        "A part of your body does not work properly or functions differently than it used to",
+        "Parts of your body are asymmetrical",
+        "Part(s) of your body is (are) too large or small",
+        "You are overweight or underweight",
+        "You will choke or vomit accidentally",
+        "You are going bald or have thinning hair",
+        "Part(s) of your body is (are) aging prematurely",
+        "Clothing does not fit certain parts of your body correctly (too loose or too tight)",
+        "You have brain damage or your mental faculties are impaired",
+        "You have undiagnosed serious illnesses"
+      ]
+    },
+    {
+      "title": "Perfectionistic Obsessions",
+      "obsessions": [
+        "Questioning whether you have said, done, or thought certain things perfectly",
+        "Questioning whether others perfectly understand what you have said",
+        "Wanting to do, think, or say everything (or certain things) perfectly",
+        "Wanting to have a perfect appearance",
+        "Wanting your clothes to fit perfectly",
+        "Questioning whether you have told the truth perfectly",
+        "Making or keeping your home or possessions perfectly clean or pristine",
+        "Keeping your possessions in perfect order",
+        "Ordering things or making them symmetrical",
+        "Wanting to know everything about a specific subject or topic",
+        "Perfectly understanding what you have read",
+        "Perfectly communicating your thoughts through writing"
+      ]
+    },
+    {
+      "title": "Neutral Obsessions",
+      "obsessions": [
+        "Sounds, words, or music",
+        "Nonsense or trivial images",
+        "Counting for no special reason",
+        "Repetitive questions for which there are no answers or which are unimportant",
+        "The excessive awareness of your own thought processes",
+        "The awareness of specific things in your environment (sounds, colors, objects, etc.)",
+        "Excessive awareness of normal body functioning (breathing, eyes blinking, heart, etc.)",
+        "Excessive awareness of abnormal body functioning (ringing in ears, aches, stiffness, pains, etc)"
+      ]
+    }
+  ]
+}
