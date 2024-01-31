@@ -183,6 +183,7 @@ const IdentifyConcerns = () => {
       localStorage.removeItem("compulsionsState");
     }
 
+    // TODO: Find a way so that the page doesn't need to be reloaded
     window.location.reload();
   };
 
