@@ -4,6 +4,7 @@ import { discomfortLevels as obsessionDiscomfortLevels } from "../../data/obsess
 import { Wrapper } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { transformConcerns } from "./helpers/transformConcerns";
 
 const Report = () => {
   const navigate = useNavigate();
@@ -17,10 +18,6 @@ const Report = () => {
       : JSON.parse(localStorage.getItem("compulsionsState") || "{}")
   );
 
-  let themesWithDiscomfortLevel5 = [];
-  let themesWithDiscomfortLevel4 = [];
-  let themesWithDiscomfortLevel3 = [];
-
   let filteredThemesWithDiscomfortLevel5 = [];
   let filteredThemesWithDiscomfortLevel4 = [];
   let filteredThemesWithDiscomfortLevel3 = [];
@@ -28,86 +25,9 @@ const Report = () => {
   let isReportEmpty = true;
 
   if (concernsState) {
-    themesWithDiscomfortLevel5 = concernsState.themes.map((theme) => {
-      const concernsWithDiscomfortLevel5 = theme.concerns.filter(
-        (concern) => concern.discomfortLevel === 5
-      );
-
-      return {
-        title: theme.title,
-        concerns: concernsWithDiscomfortLevel5,
-      };
-    });
-
-    filteredThemesWithDiscomfortLevel5 = themesWithDiscomfortLevel5.filter(
-      (theme) => theme.concerns.length > 0
-    );
-
-    filteredThemesWithDiscomfortLevel5.sort((a, b) => {
-      if (a.concerns.length > b.concerns.length) {
-        return -1;
-      }
-
-      if (a.concerns.length < b.concerns.length) {
-        return 1;
-      }
-
-      return 0;
-    });
-
-    themesWithDiscomfortLevel4 = concernsState.themes.map((theme) => {
-      const concernsWithDiscomfortLevel4 = theme.concerns.filter(
-        (concern) => concern.discomfortLevel === 4
-      );
-
-      return {
-        title: theme.title,
-        concerns: concernsWithDiscomfortLevel4,
-      };
-    });
-
-    filteredThemesWithDiscomfortLevel4 = themesWithDiscomfortLevel4.filter(
-      (theme) => theme.concerns.length > 0
-    );
-
-    filteredThemesWithDiscomfortLevel4.sort((a, b) => {
-      if (a.concerns.length > b.concerns.length) {
-        return -1;
-      }
-
-      if (a.concerns.length < b.concerns.length) {
-        return 1;
-      }
-
-      return 0;
-    });
-
-    themesWithDiscomfortLevel3 = concernsState.themes.map((theme) => {
-      const concernsWithDiscomfortLevel3 = theme.concerns.filter(
-        (concern) => concern.discomfortLevel === 3
-      );
-
-      return {
-        title: theme.title,
-        concerns: concernsWithDiscomfortLevel3,
-      };
-    });
-
-    filteredThemesWithDiscomfortLevel3 = themesWithDiscomfortLevel3.filter(
-      (theme) => theme.concerns.length > 0
-    );
-
-    filteredThemesWithDiscomfortLevel3.sort((a, b) => {
-      if (a.concerns.length > b.concerns.length) {
-        return -1;
-      }
-
-      if (a.concerns.length < b.concerns.length) {
-        return 1;
-      }
-
-      return 0;
-    });
+    filteredThemesWithDiscomfortLevel5 = transformConcerns(concernsState, 5);
+    filteredThemesWithDiscomfortLevel4 = transformConcerns(concernsState, 4);
+    filteredThemesWithDiscomfortLevel3 = transformConcerns(concernsState, 3);
 
     isReportEmpty =
       filteredThemesWithDiscomfortLevel5.length === 0 &&
