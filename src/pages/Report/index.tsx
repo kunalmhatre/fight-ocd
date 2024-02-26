@@ -1,10 +1,53 @@
 import Button from "../../components/Button";
 import Layout from "../../components/Layout";
 import { discomfortLevels as obsessionDiscomfortLevels } from "../../data/obsessions.json";
+import { discomfortLevels as compulsionDiscomfortLevels } from "../../data/compulsions.json";
 import { Wrapper } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { transformConcerns } from "./helpers/transformConcerns";
+import {
+  PDFDownloadLink,
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  Link,
+} from "@react-pdf/renderer";
+
+const styles = StyleSheet.create({
+  page: {
+    padding: 32,
+  },
+  header: {
+    fontSize: 24,
+    margin: "16px 0",
+  },
+  body: {
+    fontSize: 12,
+    lineHeight: 1.5,
+  },
+  caption: {
+    fontSize: 12,
+    lineHeight: 1.5,
+    color: "grey",
+    margin: "6px 0",
+  },
+  subheader: {
+    fontSize: 18,
+    margin: "12px 0",
+  },
+  obsessions: {
+    paddingLeft: 24,
+  },
+  footer: {
+    fontSize: 12,
+    paddingTop: 24,
+    marginTop: 24,
+    borderTop: "1px solid grey",
+  },
+});
 
 const Report = () => {
   const navigate = useNavigate();
@@ -14,8 +57,8 @@ const Report = () => {
 
   const [concernsState, setConcernsState] = useState(
     shouldShowObsessionsReport
-      ? JSON.parse(localStorage.getItem("obsessionsState") || "{}")
-      : JSON.parse(localStorage.getItem("compulsionsState") || "{}")
+      ? JSON.parse(localStorage.getItem("obsessionsState") || "null")
+      : JSON.parse(localStorage.getItem("compulsionsState") || "null")
   );
 
   let filteredThemesWithDiscomfortLevel5 = [];
@@ -35,6 +78,116 @@ const Report = () => {
       filteredThemesWithDiscomfortLevel3.length === 0;
   }
 
+  const MyDoc = () => (
+    <Document>
+      <Page style={styles.page} wrap>
+        <View>
+          <Text style={styles.body}>October 22, 2023</Text>
+          <View>
+            {filteredThemesWithDiscomfortLevel5.length > 0 && (
+              <>
+                <Text style={styles.header}>Needs immediate attention!</Text>
+                <Text style={styles.body}>Discomfort Level: 5 (out of 5)</Text>
+                <Text style={styles.caption}>
+                  {shouldShowObsessionsReport
+                    ? obsessionDiscomfortLevels[4].description
+                    : compulsionDiscomfortLevels[4].description}
+                </Text>
+                <View>
+                  {filteredThemesWithDiscomfortLevel5.map(
+                    (theme, themeIndex) => (
+                      <View key={themeIndex}>
+                        <Text style={styles.subheader}>{`${themeIndex + 1}. ${
+                          theme.title
+                        }`}</Text>
+                        <View style={styles.obsessions}>
+                          {theme.concerns.map((concern, concernIndex) => (
+                            <Text style={styles.body} key={concernIndex}>{`${
+                              concernIndex + 1
+                            }. ${concern.concern}`}</Text>
+                          ))}
+                        </View>
+                      </View>
+                    )
+                  )}
+                </View>
+              </>
+            )}
+          </View>
+          <View>
+            {filteredThemesWithDiscomfortLevel4.length > 0 && (
+              <>
+                <Text style={styles.header}>Needs attention</Text>
+                <Text style={styles.body}>Discomfort Level: 4 (out of 5)</Text>
+                <Text style={styles.caption}>
+                  {shouldShowObsessionsReport
+                    ? obsessionDiscomfortLevels[3].description
+                    : compulsionDiscomfortLevels[3].description}
+                </Text>
+                <View>
+                  {filteredThemesWithDiscomfortLevel4.map(
+                    (theme, themeIndex) => (
+                      <View key={themeIndex}>
+                        <Text style={styles.subheader}>{`${themeIndex + 1}. ${
+                          theme.title
+                        }`}</Text>
+                        <View style={styles.obsessions}>
+                          {theme.concerns.map((concern, concernIndex) => (
+                            <Text style={styles.body} key={concernIndex}>{`${
+                              concernIndex + 1
+                            }. ${concern.concern}`}</Text>
+                          ))}
+                        </View>
+                      </View>
+                    )
+                  )}
+                </View>
+              </>
+            )}
+          </View>
+          <View>
+            {filteredThemesWithDiscomfortLevel3.length > 0 && (
+              <>
+                <Text style={styles.header}>
+                  Needs to be worked on before it gets worse
+                </Text>
+                <Text style={styles.body}>Discomfort Level: 3 (out of 5)</Text>
+                <Text style={styles.caption}>
+                  {shouldShowObsessionsReport
+                    ? obsessionDiscomfortLevels[2].description
+                    : compulsionDiscomfortLevels[2].description}
+                </Text>
+                <View>
+                  {filteredThemesWithDiscomfortLevel3.map(
+                    (theme, themeIndex) => (
+                      <View key={themeIndex}>
+                        <Text style={styles.subheader}>{`${themeIndex + 1}. ${
+                          theme.title
+                        }`}</Text>
+                        <View style={styles.obsessions}>
+                          {theme.concerns.map((concern, concernIndex) => (
+                            <Text style={styles.body} key={concernIndex}>{`${
+                              concernIndex + 1
+                            }. ${concern.concern}`}</Text>
+                          ))}
+                        </View>
+                      </View>
+                    )
+                  )}
+                </View>
+              </>
+            )}
+          </View>
+          <Text style={styles.footer}>
+            Report generated by Fight OCD (
+            <Link src="https://www.fightocd.org">https://www.fightocd.org</Link>
+            )
+          </Text>
+        </View>
+      </Page>
+    </Document>
+  );
+
   return (
     <Layout>
       <Wrapper>
@@ -42,12 +195,14 @@ const Report = () => {
           {shouldShowObsessionsReport ? "Obsessions" : "Compulsions"} Report
         </h1>
         <p className="description">
-          {!isReportEmpty || !concernsState ? (
+          {concernsState && !isReportEmpty ? (
             <>
               You can download and share your report with a therapist who
               specializes in treating OCD using ERP. Your report is generated on
               your browser and we do not store your report or any of the data
-              you provided for creating the report with us.
+              you provided for creating the report with us. The data regarding
+              evaluation is stored in your browser and can be cleared by
+              clicking the "Clear Data" button.
             </>
           ) : (
             <>
@@ -61,12 +216,21 @@ const Report = () => {
           )}{" "}
           If you have not taken the test to identify your{" "}
           {shouldShowObsessionsReport ? "compulsions" : "obsessions"} then you
-          can take it by clicking the button below.
+          can take it by clicking the respective button below.
         </p>
         <div className="cta-containers">
           {!isReportEmpty && concernsState && (
-            <Button onClick={() => null} disabled={!concernsState}>
-              Download
+            <Button>
+              <PDFDownloadLink
+                document={<MyDoc />}
+                fileName="somename.pdf"
+                style={{
+                  color: "white",
+                  textDecoration: "none",
+                }}
+              >
+                Download
+              </PDFDownloadLink>
             </Button>
           )}
 
@@ -83,22 +247,23 @@ const Report = () => {
               ? "Identity Compulsions"
               : "Identify Obsessions"}
           </Button>
-        </div>
-        <Button
-          className="clear-data-button"
-          onClick={() => {
-            localStorage.removeItem(
-              shouldShowObsessionsReport
-                ? "obsessionsState"
-                : "compulsionsState"
-            );
+          <Button
+            className="clear-data-button"
+            onClick={() => {
+              localStorage.removeItem(
+                shouldShowObsessionsReport
+                  ? "obsessionsState"
+                  : "compulsionsState"
+              );
 
-            setConcernsState(null);
-          }}
-          state="danger"
-        >
-          Clear Data
-        </Button>
+              setConcernsState(null);
+            }}
+            state="danger"
+            disabled={!concernsState}
+          >
+            Clear Data
+          </Button>
+        </div>
         <hr />
         {!isReportEmpty && !!concernsState && (
           <div>
@@ -110,19 +275,25 @@ const Report = () => {
                   Discomfort Level: 5 (out of 5)
                 </p>
                 <p className="discomfort-level-description">
-                  {obsessionDiscomfortLevels[4].description}
+                  {shouldShowObsessionsReport
+                    ? obsessionDiscomfortLevels[4].description
+                    : compulsionDiscomfortLevels[4].description}
                 </p>
                 <ol>
-                  {filteredThemesWithDiscomfortLevel5.map((theme) => (
-                    <li className="theme-number">
-                      <h3 className="theme">{theme.title}</h3>
-                      <ol>
-                        {theme.concerns.map((concern) => (
-                          <li className="concern">{concern.concern}</li>
-                        ))}
-                      </ol>
-                    </li>
-                  ))}
+                  {filteredThemesWithDiscomfortLevel5.map(
+                    (theme, themeIndex) => (
+                      <li className="theme-number" key={themeIndex}>
+                        <h3 className="theme">{theme.title}</h3>
+                        <ol>
+                          {theme.concerns.map((concern, concernIndex) => (
+                            <li className="concern" key={concernIndex}>
+                              {concern.concern}
+                            </li>
+                          ))}
+                        </ol>
+                      </li>
+                    )
+                  )}
                 </ol>
                 <hr />
               </>
@@ -134,19 +305,25 @@ const Report = () => {
                   Discomfort Level: 4 (out of 5)
                 </p>
                 <p className="discomfort-level-description">
-                  {obsessionDiscomfortLevels[3].description}
+                  {shouldShowObsessionsReport
+                    ? obsessionDiscomfortLevels[3].description
+                    : compulsionDiscomfortLevels[3].description}
                 </p>
                 <ol>
-                  {filteredThemesWithDiscomfortLevel4.map((theme) => (
-                    <li className="theme-number">
-                      <h3 className="theme">{theme.title}</h3>
-                      <ol>
-                        {theme.concerns.map((concern) => (
-                          <li className="concern">{concern.concern}</li>
-                        ))}
-                      </ol>
-                    </li>
-                  ))}
+                  {filteredThemesWithDiscomfortLevel4.map(
+                    (theme, themeIndex) => (
+                      <li className="theme-number" key={themeIndex}>
+                        <h3 className="theme">{theme.title}</h3>
+                        <ol>
+                          {theme.concerns.map((concern, concernIndex) => (
+                            <li className="concern" key={concernIndex}>
+                              {concern.concern}
+                            </li>
+                          ))}
+                        </ol>
+                      </li>
+                    )
+                  )}
                 </ol>
                 <hr />
               </>
@@ -160,19 +337,25 @@ const Report = () => {
                   Discomfort Level: 3 (out of 5)
                 </p>
                 <p className="discomfort-level-description">
-                  {obsessionDiscomfortLevels[2].description}
+                  {shouldShowObsessionsReport
+                    ? obsessionDiscomfortLevels[2].description
+                    : compulsionDiscomfortLevels[2].description}
                 </p>
                 <ol>
-                  {filteredThemesWithDiscomfortLevel3.map((theme) => (
-                    <li className="theme-number">
-                      <h3 className="theme">{theme.title}</h3>
-                      <ol>
-                        {theme.concerns.map((concern) => (
-                          <li className="concern">{concern.concern}</li>
-                        ))}
-                      </ol>
-                    </li>
-                  ))}
+                  {filteredThemesWithDiscomfortLevel3.map(
+                    (theme, themeIndex) => (
+                      <li className="theme-number" key={themeIndex}>
+                        <h3 className="theme">{theme.title}</h3>
+                        <ol>
+                          {theme.concerns.map((concern, concernIndex) => (
+                            <li className="concern" key={concernIndex}>
+                              {concern.concern}
+                            </li>
+                          ))}
+                        </ol>
+                      </li>
+                    )
+                  )}
                 </ol>
                 <hr />
               </>

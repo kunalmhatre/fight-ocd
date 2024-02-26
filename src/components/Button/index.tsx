@@ -1,9 +1,9 @@
 import { Button as StyledButton } from "./styles";
 
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
-  children: string;
+  children: string | React.ReactNode;
   variant?: "primary" | "secondary";
   state?: "default" | "success" | "danger";
 }

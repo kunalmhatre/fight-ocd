@@ -61,6 +61,24 @@ const Wrapper = styled.div`
     button {
       margin-right: 1rem;
     }
+
+    button:last-child {
+      margin-right: 0;
+    }
+
+    @media (max-width: 380px) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      button {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+
+      button:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   hr {
@@ -74,10 +92,9 @@ const Wrapper = styled.div`
   }
 
   .control-cta-container {
-    margin-bottom: 1rem;
-
     button {
       margin-right: 1rem;
+      margin-bottom: 1rem;
     }
   }
 `;
@@ -108,8 +125,9 @@ const DiscomfortLevel = styled.div<DiscomfortLevelProps>`
   }};
   border: ${({ theme }) => `1px solid ${theme.border}`};
   border-radius: 50%;
-  height: 25px;
-  width: 25px;
+  margin-right: 0.5rem;
+  min-height: 25px;
+  min-width: 25px;
 `;
 
 interface ProgressLabelProps {

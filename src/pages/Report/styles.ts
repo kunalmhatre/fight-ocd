@@ -13,20 +13,41 @@ const Wrapper = styled.div`
     font-size: 1.25rem;
     line-height: 2rem;
     width: 40vw;
+
+    @media only screen and (max-width: 1200px) {
+      width: 60vw;
+    }
+
+    @media only screen and (max-width: 768px) {
+      width: 70vw;
+    }
+
+    @media only screen and (max-width: 576px) {
+      width: 100%;
+    }
   }
 
   .cta-containers {
     display: flex;
 
-    button:first-child {
+    button {
       margin-right: 1rem;
     }
 
-    @media (max-width: 576px) {
+    button:last-child {
+      margin-right: 0;
+    }
+
+    @media (max-width: 768px) {
       flex-direction: column;
 
-      button:first-child {
+      button {
+        margin-right: 0;
         margin-bottom: 1rem;
+      }
+
+      button:last-child {
+        margin-bottom: 0;
       }
     }
   }
@@ -66,10 +87,6 @@ const Wrapper = styled.div`
 
   .concern {
     font-size: 1.25rem;
-  }
-
-  .clear-data-button {
-    margin-top: 1rem;
   }
 `;
 

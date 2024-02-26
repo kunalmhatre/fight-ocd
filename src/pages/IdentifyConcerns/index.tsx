@@ -138,7 +138,6 @@ const IdentifyConcerns = () => {
     if (shouldIdentifyObsessions) {
       localStorage.setItem("obsessionsState", JSON.stringify(state));
     } else {
-      console.log(shouldIdentifyObsessions, "shouldIdentifyObsessions");
       localStorage.setItem("compulsionsState", JSON.stringify(state));
     }
   }, [state, shouldIdentifyObsessions]);
@@ -307,8 +306,7 @@ const IdentifyConcerns = () => {
                 <DiscomfortLevel level={discomfortLevel.level}>
                   {discomfortLevel.level}
                 </DiscomfortLevel>
-                &nbsp;
-                <span>{discomfortLevel.description}</span>
+                <div>{discomfortLevel.description}</div>
               </div>
             ))}
           </div>

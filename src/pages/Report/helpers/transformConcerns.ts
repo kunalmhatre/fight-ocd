@@ -1,5 +1,4 @@
 export const transformConcerns = (concerns, level) => {
-  //console.log(concerns, "concerns");
   let themesWithDiscomfortLevel = [];
   let filteredThemesWithDiscomfortLevel = [];
 
@@ -7,13 +6,13 @@ export const transformConcerns = (concerns, level) => {
     const concernsWithDiscomfortLevel = theme.concerns.filter(
       (concern) => concern.discomfortLevel === level
     );
-    console.log(concernsWithDiscomfortLevel, "concernsWithDiscomfortLevel");
+
     return {
       title: theme.title,
       concerns: concernsWithDiscomfortLevel,
     };
   });
-  console.log(themesWithDiscomfortLevel, "themesWithDiscomfortLevel");
+
   filteredThemesWithDiscomfortLevel = themesWithDiscomfortLevel.filter(
     (theme) => theme.concerns.length > 0
   );
@@ -29,9 +28,6 @@ export const transformConcerns = (concerns, level) => {
 
     return 0;
   });
-  // console.log(
-  //   filteredThemesWithDiscomfortLevel,
-  //   "filteredThemesWithDiscomfortLevel"
-  // );
+
   return filteredThemesWithDiscomfortLevel;
 };
