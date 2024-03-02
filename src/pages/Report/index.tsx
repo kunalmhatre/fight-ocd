@@ -15,6 +15,7 @@ import {
   StyleSheet,
   Link,
 } from "@react-pdf/renderer";
+import moment from "moment";
 
 const styles = StyleSheet.create({
   page: {
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
 });
 
 const Report = () => {
+  const dateToday = moment().format("Do MMMM, YYYY");
   const navigate = useNavigate();
 
   const shouldShowObsessionsReport =
@@ -82,7 +84,7 @@ const Report = () => {
     <Document>
       <Page style={styles.page} wrap>
         <View>
-          <Text style={styles.body}>October 22, 2023</Text>
+          <Text style={styles.body}>{dateToday}</Text>
           <View>
             {filteredThemesWithDiscomfortLevel5.length > 0 && (
               <>
@@ -223,10 +225,13 @@ const Report = () => {
             <Button>
               <PDFDownloadLink
                 document={<MyDoc />}
-                fileName="somename.pdf"
+                fileName={`${
+                  shouldShowObsessionsReport ? "obsessions" : "compulsions"
+                }-report-${moment().format("DD-MM-YYYY")}.pdf`}
                 style={{
                   color: "white",
                   textDecoration: "none",
+                  padding: "0.75rem 0",
                 }}
               >
                 Download
@@ -267,7 +272,7 @@ const Report = () => {
         <hr />
         {!isReportEmpty && !!concernsState && (
           <div>
-            <p>October 22, 2023</p>
+            <p>{dateToday}</p>
             {filteredThemesWithDiscomfortLevel5.length > 0 && (
               <>
                 <h2 className="attention-title">Needs immediate attention!</h2>
