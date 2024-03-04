@@ -33,6 +33,7 @@ const ThemesListItem = styled.li`
 
 const ConcernsListItem = styled.li`
   font-size: 1.25rem;
+  line-height: 1.5;
 `;
 
 const DiscomfortLevel = styled.p`
