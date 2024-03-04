@@ -35,11 +35,13 @@ const Footer = styled.footer`
   border-top: 1px solid ${({ theme }) => theme.border};
   background-color: ${({ theme }) => theme.white};
 
-  div {
+  nav {
     padding: 2rem 3rem;
-    display: flex;
 
-    nav {
+    a {
+      color: ${({ theme }) => theme.primary};
+      font-size: 1.5rem;
+      font-weight: 700;
       margin-right: 1rem;
 
       @media only screen and (max-width: 480px) {
@@ -48,15 +50,10 @@ const Footer = styled.footer`
       }
     }
 
-    nav > a {
-      color: ${({ theme }) => theme.primary};
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
     @media only screen and (max-width: 480px) {
-      padding: 2rem 1.5rem;
+      display: flex;
       flex-direction: column;
+      padding: 2rem 1.5rem;
     }
   }
 `;

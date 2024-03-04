@@ -10,7 +10,6 @@ interface LayoutProps {
 const theme = {
   primary: "#000000",
   border: "#838282",
-  black: "#000000",
   grey: "#808080",
   white: "#FFFFFF",
   danger: "#C21A1A",
@@ -31,17 +30,11 @@ const Layout = ({ children }: LayoutProps) => {
         <Header onClick={() => navigate("/")}>Fight OCD</Header>
         <Content>{children}</Content>
         <Footer>
-          <div>
-            <nav>
-              <Link to="/about">About</Link>
-            </nav>
-            <nav>
-              <Link to="/contact">Contact</Link>
-            </nav>
-            <nav>
-              <Link to="/contribute">Contribute</Link>
-            </nav>
-          </div>
+          <nav>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/contribute">Contribute</Link>
+          </nav>
         </Footer>
       </Wrapper>
     </ThemeProvider>

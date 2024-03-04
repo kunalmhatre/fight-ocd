@@ -4,22 +4,20 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   onClick?: () => void;
   disabled?: boolean;
   children: string | React.ReactNode;
-  variant?: "primary" | "secondary";
   state?: "default" | "success" | "danger";
 }
 
 const Button = ({
-  onClick,
-  disabled,
+  onClick = () => {},
+  disabled = false,
+  state = "default",
   children,
-  variant,
-  state,
   ...props
 }: ButtonProps) => (
   <StyledButton
     onClick={onClick}
     disabled={disabled}
-    variant={state === "success" || state === "danger" ? "secondary" : variant}
+    variant={state === "default" ? "primary" : "secondary"}
     state={state}
     {...props}
   >

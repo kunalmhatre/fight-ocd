@@ -1,4 +1,4 @@
-import { Button } from "./styles";
+import { Button as StyledButton } from "./styles";
 
 interface DiscomfortButtonProps {
   onClick: () => void;
@@ -9,12 +9,12 @@ interface DiscomfortButtonProps {
 const DiscomfortButton = ({
   onClick,
   level,
-  isSelected,
+  isSelected = false,
 }: DiscomfortButtonProps) => {
   return (
-    <Button onClick={onClick} discomfortLevel={level} isSelected={isSelected}>
+    <StyledButton onClick={onClick} level={level} isSelected={isSelected}>
       {level}
-    </Button>
+    </StyledButton>
   );
 };
 

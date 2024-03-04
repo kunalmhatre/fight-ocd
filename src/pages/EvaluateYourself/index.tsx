@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
-import { Wrapper } from "./styles";
+import { Wrapper, Content, ButtonsContainer } from "./styles";
+import Button from "../../components/Button";
+import ExternalLink from "../../components/ExternalLink";
 
 const EvaluateYourself = () => {
   const navigate = useNavigate();
@@ -9,7 +11,7 @@ const EvaluateYourself = () => {
     <Layout>
       <Wrapper>
         <h1>Evaluate yourself</h1>
-        <p className="description">
+        <Content>
           The goal of this tool is to identify your obsessions and compulsions
           that needs attention. You will be given an option to download your
           report at the end of each test. You can share your reports with a
@@ -17,32 +19,23 @@ const EvaluateYourself = () => {
           ask for any of your personally identifiable information while taking
           any of the tests or for the report generation; therefore, you can be
           yourself while taking the tests.
-        </p>
-        <p className="note">
+        </Content>
+        <Content>
           The inspiration for this tool is taken from a book called{" "}
-          <a
-            href="https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl"
-            target="_blank"
-          >
+          <ExternalLink href="https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl">
             Freedom from Obsessive Compulsive Disorder: A Personalized Recovery
             Program for Living with Uncertainty
-          </a>{" "}
+          </ExternalLink>{" "}
           by Dr. Jonathan Grayson.
-        </p>
-        <div className="cta-container">
-          <button
-            className="cta"
-            onClick={() => navigate("/identify-obsessions")}
-          >
+        </Content>
+        <ButtonsContainer>
+          <Button onClick={() => navigate("/identify-obsessions")}>
             Identify Obsessions
-          </button>
-          <button
-            className="cta"
-            onClick={() => navigate("/identify-compulsions")}
-          >
+          </Button>
+          <Button onClick={() => navigate("/identify-compulsions")}>
             Identify Compulsions
-          </button>
-        </div>
+          </Button>
+        </ButtonsContainer>
       </Wrapper>
     </Layout>
   );

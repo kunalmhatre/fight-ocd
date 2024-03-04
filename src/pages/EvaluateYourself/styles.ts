@@ -8,55 +8,34 @@ const Wrapper = styled.div`
     font-weight: 900;
     margin-bottom: 1rem;
   }
+`;
 
-  p.description,
-  p.note {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    width: 40vw;
+const Content = styled.p`
+  font-size: 1.25rem;
+  line-height: 2rem;
+  width: 40vw;
+
+  @media only screen and (max-width: 1200px) {
+    width: 60vw;
   }
 
-  p.note {
-    a {
-      color: ${({ theme }) => theme.primary};
-    }
+  @media only screen and (max-width: 768px) {
+    width: 70vw;
   }
 
-  p.description,
-  p.note {
-    @media only screen and (max-width: 1200px) {
-      width: 60vw;
-    }
-
-    @media only screen and (max-width: 768px) {
-      width: 70vw;
-    }
-
-    @media only screen and (max-width: 576px) {
-      width: 100%;
-    }
-  }
-
-  .cta-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 3rem;
-
-    button:nth-child(1) {
-      margin-bottom: 1rem;
-    }
-  }
-
-  .cta {
-    cursor: pointer;
-    font-weight: 700;
-    width: fit-content;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    border: none;
-    color: ${({ theme }) => theme.white};
-    background-color: ${({ theme }) => theme.primary};
+  @media only screen and (max-width: 576px) {
+    width: 100%;
   }
 `;
 
-export { Wrapper };
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+
+  button:nth-child(1) {
+    margin-bottom: 1rem;
+  }
+`;
+
+export { Wrapper, Content, ButtonsContainer };

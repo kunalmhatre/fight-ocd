@@ -9,7 +9,16 @@ import {
   themes as compulsionTheme,
 } from "../../data/compulsions.json";
 import DiscomfortButton from "../../components/DiscomfortButton";
-import { DiscomfortLevel, ProgressLabel, Wrapper } from "./styles";
+import {
+  DiscomfortLevel,
+  ProgressLabel,
+  Wrapper,
+  LabelContainer,
+  Content,
+  DiscomfortLevelInfoContainer,
+  DiscomfortButtonsContainer,
+  ButtonsContainer,
+} from "./styles";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -190,8 +199,8 @@ const IdentifyConcerns = () => {
     <Layout>
       <Wrapper>
         <div>
-          <h2 className="title">{theme.title}</h2>
-          <div className="progress-label-container">
+          <h2>{theme.title}</h2>
+          <LabelContainer>
             <ProgressLabel isActive={currentConcern + 1 === 1}>
               {currentTheme + 1} of {totalThemes} themes
             </ProgressLabel>
@@ -199,11 +208,11 @@ const IdentifyConcerns = () => {
               {currentConcern + 1} of {totalConcerns}{" "}
               {shouldIdentifyObsessions ? "obsessions" : "compulsions"}
             </ProgressLabel>
-          </div>
+          </LabelContainer>
           <div>
-            <h1 className="concern">{concern.concern}</h1>
-            <p className="message">Choose your level of discomfort</p>
-            <div className="cta-container">
+            <h1>{concern.concern}</h1>
+            <Content>Choose your level of discomfort</Content>
+            <DiscomfortButtonsContainer>
               <DiscomfortButton
                 onClick={() => {
                   dispatch({
@@ -269,9 +278,9 @@ const IdentifyConcerns = () => {
                 level={5}
                 isSelected={concern.discomfortLevel === 5}
               />
-            </div>
+            </DiscomfortButtonsContainer>
           </div>
-          <div className="control-cta-container">
+          <ButtonsContainer>
             <Button onClick={previousConcern} disabled={isPreviousDisabled}>
               Previous
             </Button>
@@ -291,7 +300,7 @@ const IdentifyConcerns = () => {
                   Generate Report
                 </Button>
               )}
-          </div>
+          </ButtonsContainer>
           <Button
             onClick={restart}
             disabled={isPreviousDisabled}
@@ -302,12 +311,12 @@ const IdentifyConcerns = () => {
           <hr />
           <div>
             {discomfortLevels.map((discomfortLevel) => (
-              <div className="discomfort-level-info-container">
+              <DiscomfortLevelInfoContainer>
                 <DiscomfortLevel level={discomfortLevel.level}>
                   {discomfortLevel.level}
                 </DiscomfortLevel>
                 <div>{discomfortLevel.description}</div>
-              </div>
+              </DiscomfortLevelInfoContainer>
             ))}
           </div>
         </div>

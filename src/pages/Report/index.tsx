@@ -2,7 +2,15 @@ import Button from "../../components/Button";
 import Layout from "../../components/Layout";
 import { discomfortLevels as obsessionDiscomfortLevels } from "../../data/obsessions.json";
 import { discomfortLevels as compulsionDiscomfortLevels } from "../../data/compulsions.json";
-import { Wrapper } from "./styles";
+import {
+  Wrapper,
+  Description,
+  ButtonsContainer,
+  DiscomfortLevel,
+  DiscomfortLevelDescription,
+  ThemesListItem,
+  ConcernsListItem,
+} from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { transformConcerns } from "./helpers/transformConcerns";
@@ -196,7 +204,7 @@ const Report = () => {
         <h1>
           {shouldShowObsessionsReport ? "Obsessions" : "Compulsions"} Report
         </h1>
-        <p className="description">
+        <Description>
           {concernsState && !isReportEmpty ? (
             <>
               You can download and share your report with a therapist who
@@ -219,8 +227,8 @@ const Report = () => {
           If you have not taken the test to identify your{" "}
           {shouldShowObsessionsReport ? "compulsions" : "obsessions"} then you
           can take it by clicking the respective button below.
-        </p>
-        <div className="cta-containers">
+        </Description>
+        <ButtonsContainer>
           {!isReportEmpty && concernsState && (
             <Button>
               <PDFDownloadLink
@@ -268,35 +276,35 @@ const Report = () => {
           >
             Clear Data
           </Button>
-        </div>
+        </ButtonsContainer>
         <hr />
         {!isReportEmpty && !!concernsState && (
           <div>
             <p>{dateToday}</p>
             {filteredThemesWithDiscomfortLevel5.length > 0 && (
               <>
-                <h2 className="attention-title">Needs immediate attention!</h2>
-                <p className="discomfort-level">
+                <h2>Needs immediate attention!</h2>
+                <DiscomfortLevel>
                   Discomfort Level: 5 (out of 5)
-                </p>
-                <p className="discomfort-level-description">
+                </DiscomfortLevel>
+                <DiscomfortLevelDescription>
                   {shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[4].description
                     : compulsionDiscomfortLevels[4].description}
-                </p>
+                </DiscomfortLevelDescription>
                 <ol>
                   {filteredThemesWithDiscomfortLevel5.map(
                     (theme, themeIndex) => (
-                      <li className="theme-number" key={themeIndex}>
-                        <h3 className="theme">{theme.title}</h3>
+                      <ThemesListItem key={themeIndex}>
+                        <h3>{theme.title}</h3>
                         <ol>
                           {theme.concerns.map((concern, concernIndex) => (
-                            <li className="concern" key={concernIndex}>
+                            <ConcernsListItem key={concernIndex}>
                               {concern.concern}
-                            </li>
+                            </ConcernsListItem>
                           ))}
                         </ol>
-                      </li>
+                      </ThemesListItem>
                     )
                   )}
                 </ol>
@@ -305,28 +313,28 @@ const Report = () => {
             )}
             {filteredThemesWithDiscomfortLevel4.length > 0 && (
               <>
-                <h2 className="attention-title">Needs attention</h2>
-                <p className="discomfort-level">
+                <h2>Needs attention</h2>
+                <DiscomfortLevel>
                   Discomfort Level: 4 (out of 5)
-                </p>
-                <p className="discomfort-level-description">
+                </DiscomfortLevel>
+                <DiscomfortLevelDescription>
                   {shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[3].description
                     : compulsionDiscomfortLevels[3].description}
-                </p>
+                </DiscomfortLevelDescription>
                 <ol>
                   {filteredThemesWithDiscomfortLevel4.map(
                     (theme, themeIndex) => (
-                      <li className="theme-number" key={themeIndex}>
-                        <h3 className="theme">{theme.title}</h3>
+                      <ThemesListItem key={themeIndex}>
+                        <h3>{theme.title}</h3>
                         <ol>
                           {theme.concerns.map((concern, concernIndex) => (
-                            <li className="concern" key={concernIndex}>
+                            <ConcernsListItem key={concernIndex}>
                               {concern.concern}
-                            </li>
+                            </ConcernsListItem>
                           ))}
                         </ol>
-                      </li>
+                      </ThemesListItem>
                     )
                   )}
                 </ol>
@@ -335,37 +343,33 @@ const Report = () => {
             )}
             {filteredThemesWithDiscomfortLevel3.length > 0 && (
               <>
-                <h2 className="attention-title">
-                  Needs to be worked on before it gets worse
-                </h2>
-                <p className="discomfort-level">
+                <h2>Needs to be worked on before it gets worse</h2>
+                <DiscomfortLevel>
                   Discomfort Level: 3 (out of 5)
-                </p>
-                <p className="discomfort-level-description">
+                </DiscomfortLevel>
+                <DiscomfortLevelDescription>
                   {shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[2].description
                     : compulsionDiscomfortLevels[2].description}
-                </p>
+                </DiscomfortLevelDescription>
                 <ol>
                   {filteredThemesWithDiscomfortLevel3.map(
                     (theme, themeIndex) => (
-                      <li className="theme-number" key={themeIndex}>
-                        <h3 className="theme">{theme.title}</h3>
+                      <ThemesListItem key={themeIndex}>
+                        <h3>{theme.title}</h3>
                         <ol>
                           {theme.concerns.map((concern, concernIndex) => (
-                            <li className="concern" key={concernIndex}>
+                            <ConcernsListItem key={concernIndex}>
                               {concern.concern}
-                            </li>
+                            </ConcernsListItem>
                           ))}
                         </ol>
-                      </li>
+                      </ThemesListItem>
                     )
                   )}
                 </ol>
-                <hr />
               </>
             )}
-            <p>Report generated by Fight OCD (https://www.fightocd.org)</p>
           </div>
         )}
       </Wrapper>

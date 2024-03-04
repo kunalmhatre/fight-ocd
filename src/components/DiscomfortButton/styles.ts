@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 interface ButtonProps {
-  discomfortLevel: number;
+  level: number;
   isSelected?: boolean;
 }
 
 const Button = styled.button<ButtonProps>`
-  background-color: ${({ theme, discomfortLevel }) => {
-    switch (discomfortLevel) {
+  background-color: ${({ theme, level }) => {
+    switch (level) {
       case 1:
         return theme.discomfortLevel1;
       case 2:
@@ -23,7 +23,7 @@ const Button = styled.button<ButtonProps>`
     }
   }};
   border: ${({ theme, isSelected }) =>
-    isSelected ? `5px solid ${theme.black}` : `1px solid ${theme.border}`};
+    isSelected ? `5px solid ${theme.primary}` : `1px solid ${theme.border}`};
   border-radius: 50%;
   height: 50px;
   width: 50px;
@@ -34,7 +34,7 @@ const Button = styled.button<ButtonProps>`
   }
 
   &:active {
-    border: 5px solid ${({ theme }) => theme.black};
+    border: 5px solid ${({ theme }) => theme.primary};
   }
 `;
 

@@ -9,85 +9,93 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
   }
 
-  p.description {
-    font-size: 1.25rem;
-    line-height: 2rem;
-    width: 40vw;
-
-    @media only screen and (max-width: 1200px) {
-      width: 60vw;
-    }
-
-    @media only screen and (max-width: 768px) {
-      width: 70vw;
-    }
-
-    @media only screen and (max-width: 576px) {
-      width: 100%;
-    }
+  h2 {
+    font-size: 2.5rem;
   }
 
-  .cta-containers {
-    display: flex;
-
-    button {
-      margin-right: 1rem;
-    }
-
-    button:last-child {
-      margin-right: 0;
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-
-      button {
-        margin-right: 0;
-        margin-bottom: 1rem;
-      }
-
-      button:last-child {
-        margin-bottom: 0;
-      }
-    }
+  h3 {
+    font-size: 2rem;
   }
 
   hr {
     margin: 2.5rem 0;
   }
+`;
 
-  .attention-title {
-    font-size: 2.5rem;
-  }
+const ThemesListItem = styled.li`
+  margin-bottom: 0.5rem;
 
-  .discomfort-level {
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-
-  .discomfort-level-description {
-    font-size: 1.25rem;
-    font-style: italic;
-    font-weight: 700;
-    color: ${({ theme }) => theme.grey};
-  }
-
-  li {
-    margin-bottom: 0.5rem;
-  }
-
-  .theme-number::marker {
+  &::marker {
     font-size: 2rem;
     font-weight: 700;
-  }
-
-  .theme {
-    font-size: 2rem;
-  }
-
-  .concern {
-    font-size: 1.25rem;
   }
 `;
 
-export { Wrapper };
+const ConcernsListItem = styled.li`
+  font-size: 1.25rem;
+`;
+
+const DiscomfortLevel = styled.p`
+  font-size: 1.25rem;
+  font-weight: 700;
+`;
+
+const DiscomfortLevelDescription = styled.p`
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 700;
+  color: ${({ theme }) => theme.grey};
+`;
+
+const Description = styled.p`
+  font-size: 1.25rem;
+  line-height: 2rem;
+  width: 40vw;
+
+  @media only screen and (max-width: 1200px) {
+    width: 60vw;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 70vw;
+  }
+
+  @media only screen and (max-width: 576px) {
+    width: 100%;
+  }
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+
+  button {
+    margin-right: 1rem;
+  }
+
+  button:last-child {
+    margin-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    button {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    button:last-child {
+      margin-bottom: 0;
+    }
+  }
+`;
+
+export {
+  Wrapper,
+  Description,
+  ButtonsContainer,
+  DiscomfortLevel,
+  DiscomfortLevelDescription,
+  ThemesListItem,
+  ConcernsListItem,
+};
