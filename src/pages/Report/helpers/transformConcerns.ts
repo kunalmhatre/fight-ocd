@@ -1,10 +1,20 @@
-export const transformConcerns = (concerns, level) => {
+import { State, Theme } from "../../IdentifyConcerns/reducer";
+
+interface TransformConcernsParams {
+  concerns: State;
+  discomfortLevel: number;
+}
+
+export const transformConcerns = ({
+  concerns,
+  discomfortLevel,
+}: TransformConcernsParams): Theme[] => {
   let themesWithDiscomfortLevel = [];
   let filteredThemesWithDiscomfortLevel = [];
 
   themesWithDiscomfortLevel = concerns.themes.map((theme) => {
     const concernsWithDiscomfortLevel = theme.concerns.filter(
-      (concern) => concern.discomfortLevel === level
+      (concern) => concern.discomfortLevel === discomfortLevel
     );
 
     return {

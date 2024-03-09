@@ -10,6 +10,7 @@ import {
   DiscomfortLevelDescription,
   ThemesListItem,
   ConcernsListItem,
+  pdfContentStyles,
 } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -20,43 +21,10 @@ import {
   Page,
   Text,
   View,
-  StyleSheet,
   Link,
 } from "@react-pdf/renderer";
 import moment from "moment";
-
-const styles = StyleSheet.create({
-  page: {
-    padding: 32,
-  },
-  header: {
-    fontSize: 24,
-    margin: "16px 0",
-  },
-  body: {
-    fontSize: 12,
-    lineHeight: 1.5,
-  },
-  caption: {
-    fontSize: 12,
-    lineHeight: 1.5,
-    color: "grey",
-    margin: "6px 0",
-  },
-  subheader: {
-    fontSize: 18,
-    margin: "12px 0",
-  },
-  obsessions: {
-    paddingLeft: 24,
-  },
-  footer: {
-    fontSize: 12,
-    paddingTop: 24,
-    marginTop: 24,
-    borderTop: "1px solid grey",
-  },
-});
+import { State, Theme } from "../IdentifyConcerns/reducer";
 
 const Report = () => {
   const dateToday = moment().format("Do MMMM, YYYY");
@@ -65,22 +33,31 @@ const Report = () => {
   const shouldShowObsessionsReport =
     window.location.pathname === "/obsessions-report";
 
-  const [concernsState, setConcernsState] = useState(
+  const [concerns, setConcerns] = useState<State | null>(
     shouldShowObsessionsReport
       ? JSON.parse(localStorage.getItem("obsessionsState") || "null")
       : JSON.parse(localStorage.getItem("compulsionsState") || "null")
   );
 
-  let filteredThemesWithDiscomfortLevel5 = [];
-  let filteredThemesWithDiscomfortLevel4 = [];
-  let filteredThemesWithDiscomfortLevel3 = [];
+  let filteredThemesWithDiscomfortLevel5: Theme[] = [];
+  let filteredThemesWithDiscomfortLevel4: Theme[] = [];
+  let filteredThemesWithDiscomfortLevel3: Theme[] = [];
 
   let isReportEmpty = true;
 
-  if (concernsState) {
-    filteredThemesWithDiscomfortLevel5 = transformConcerns(concernsState, 5);
-    filteredThemesWithDiscomfortLevel4 = transformConcerns(concernsState, 4);
-    filteredThemesWithDiscomfortLevel3 = transformConcerns(concernsState, 3);
+  if (concerns) {
+    filteredThemesWithDiscomfortLevel5 = transformConcerns({
+      concerns,
+      discomfortLevel: 5,
+    });
+    filteredThemesWithDiscomfortLevel4 = transformConcerns({
+      concerns,
+      discomfortLevel: 4,
+    });
+    filteredThemesWithDiscomfortLevel3 = transformConcerns({
+      concerns,
+      discomfortLevel: 3,
+    });
 
     isReportEmpty =
       filteredThemesWithDiscomfortLevel5.length === 0 &&
@@ -88,17 +65,21 @@ const Report = () => {
       filteredThemesWithDiscomfortLevel3.length === 0;
   }
 
-  const MyDoc = () => (
+  const PDFContent = () => (
     <Document>
-      <Page style={styles.page} wrap>
+      <Page style={pdfContentStyles.page} wrap>
         <View>
-          <Text style={styles.body}>{dateToday}</Text>
+          <Text style={pdfContentStyles.body}>{dateToday}</Text>
           <View>
             {filteredThemesWithDiscomfortLevel5.length > 0 && (
               <>
-                <Text style={styles.header}>Needs immediate attention!</Text>
-                <Text style={styles.body}>Discomfort Level: 5 (out of 5)</Text>
-                <Text style={styles.caption}>
+                <Text style={pdfContentStyles.header}>
+                  Needs immediate attention!
+                </Text>
+                <Text style={pdfContentStyles.body}>
+                  Discomfort Level: 5 (out of 5)
+                </Text>
+                <Text style={pdfContentStyles.caption}>
                   {shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[4].description
                     : compulsionDiscomfortLevels[4].description}
@@ -107,14 +88,15 @@ const Report = () => {
                   {filteredThemesWithDiscomfortLevel5.map(
                     (theme, themeIndex) => (
                       <View key={themeIndex}>
-                        <Text style={styles.subheader}>{`${themeIndex + 1}. ${
-                          theme.title
-                        }`}</Text>
-                        <View style={styles.obsessions}>
+                        <Text style={pdfContentStyles.subheader}>{`${
+                          themeIndex + 1
+                        }. ${theme.title}`}</Text>
+                        <View style={pdfContentStyles.obsessions}>
                           {theme.concerns.map((concern, concernIndex) => (
-                            <Text style={styles.body} key={concernIndex}>{`${
-                              concernIndex + 1
-                            }. ${concern.concern}`}</Text>
+                            <Text
+                              style={pdfContentStyles.body}
+                              key={concernIndex}
+                            >{`${concernIndex + 1}. ${concern.concern}`}</Text>
                           ))}
                         </View>
                       </View>
@@ -127,9 +109,11 @@ const Report = () => {
           <View>
             {filteredThemesWithDiscomfortLevel4.length > 0 && (
               <>
-                <Text style={styles.header}>Needs attention</Text>
-                <Text style={styles.body}>Discomfort Level: 4 (out of 5)</Text>
-                <Text style={styles.caption}>
+                <Text style={pdfContentStyles.header}>Needs attention</Text>
+                <Text style={pdfContentStyles.body}>
+                  Discomfort Level: 4 (out of 5)
+                </Text>
+                <Text style={pdfContentStyles.caption}>
                   {shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[3].description
                     : compulsionDiscomfortLevels[3].description}
@@ -138,14 +122,15 @@ const Report = () => {
                   {filteredThemesWithDiscomfortLevel4.map(
                     (theme, themeIndex) => (
                       <View key={themeIndex}>
-                        <Text style={styles.subheader}>{`${themeIndex + 1}. ${
-                          theme.title
-                        }`}</Text>
-                        <View style={styles.obsessions}>
+                        <Text style={pdfContentStyles.subheader}>{`${
+                          themeIndex + 1
+                        }. ${theme.title}`}</Text>
+                        <View style={pdfContentStyles.obsessions}>
                           {theme.concerns.map((concern, concernIndex) => (
-                            <Text style={styles.body} key={concernIndex}>{`${
-                              concernIndex + 1
-                            }. ${concern.concern}`}</Text>
+                            <Text
+                              style={pdfContentStyles.body}
+                              key={concernIndex}
+                            >{`${concernIndex + 1}. ${concern.concern}`}</Text>
                           ))}
                         </View>
                       </View>
@@ -158,11 +143,13 @@ const Report = () => {
           <View>
             {filteredThemesWithDiscomfortLevel3.length > 0 && (
               <>
-                <Text style={styles.header}>
+                <Text style={pdfContentStyles.header}>
                   Needs to be worked on before it gets worse
                 </Text>
-                <Text style={styles.body}>Discomfort Level: 3 (out of 5)</Text>
-                <Text style={styles.caption}>
+                <Text style={pdfContentStyles.body}>
+                  Discomfort Level: 3 (out of 5)
+                </Text>
+                <Text style={pdfContentStyles.caption}>
                   {shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[2].description
                     : compulsionDiscomfortLevels[2].description}
@@ -171,14 +158,15 @@ const Report = () => {
                   {filteredThemesWithDiscomfortLevel3.map(
                     (theme, themeIndex) => (
                       <View key={themeIndex}>
-                        <Text style={styles.subheader}>{`${themeIndex + 1}. ${
-                          theme.title
-                        }`}</Text>
-                        <View style={styles.obsessions}>
+                        <Text style={pdfContentStyles.subheader}>{`${
+                          themeIndex + 1
+                        }. ${theme.title}`}</Text>
+                        <View style={pdfContentStyles.obsessions}>
                           {theme.concerns.map((concern, concernIndex) => (
-                            <Text style={styles.body} key={concernIndex}>{`${
-                              concernIndex + 1
-                            }. ${concern.concern}`}</Text>
+                            <Text
+                              style={pdfContentStyles.body}
+                              key={concernIndex}
+                            >{`${concernIndex + 1}. ${concern.concern}`}</Text>
                           ))}
                         </View>
                       </View>
@@ -188,7 +176,7 @@ const Report = () => {
               </>
             )}
           </View>
-          <Text style={styles.footer}>
+          <Text style={pdfContentStyles.footer}>
             Report generated by Fight OCD (
             <Link src="https://www.fightocd.org">https://www.fightocd.org</Link>
             )
@@ -205,7 +193,7 @@ const Report = () => {
           {shouldShowObsessionsReport ? "Obsessions" : "Compulsions"} Report
         </h1>
         <Description>
-          {concernsState && !isReportEmpty ? (
+          {concerns && !isReportEmpty ? (
             <>
               You can download and share your report with a therapist who
               specializes in treating OCD using ERP. Your report is generated on
@@ -229,10 +217,10 @@ const Report = () => {
           can take it by clicking the respective button below.
         </Description>
         <ButtonsContainer>
-          {!isReportEmpty && concernsState && (
+          {!isReportEmpty && concerns && (
             <Button>
               <PDFDownloadLink
-                document={<MyDoc />}
+                document={<PDFContent />}
                 fileName={`${
                   shouldShowObsessionsReport ? "obsessions" : "compulsions"
                 }-report-${moment().format("DD-MM-YYYY")}.pdf`}
@@ -246,7 +234,6 @@ const Report = () => {
               </PDFDownloadLink>
             </Button>
           )}
-
           <Button
             onClick={() =>
               navigate(
@@ -269,16 +256,16 @@ const Report = () => {
                   : "compulsionsState"
               );
 
-              setConcernsState(null);
+              setConcerns(null);
             }}
             state="danger"
-            disabled={!concernsState}
+            disabled={!concerns}
           >
             Clear Data
           </Button>
         </ButtonsContainer>
         <hr />
-        {!isReportEmpty && !!concernsState && (
+        {!isReportEmpty && !!concerns && (
           <div>
             <p>{dateToday}</p>
             {filteredThemesWithDiscomfortLevel5.length > 0 && (

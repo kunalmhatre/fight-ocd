@@ -1,13 +1,5 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useMemo, useReducer } from "react";
 import Layout from "../../components/Layout";
-import {
-  discomfortLevels as obsessionDiscomfortLevels,
-  themes as obsessionTheme,
-} from "../../data/obsessions.json";
-import {
-  discomfortLevels as compulsionDiscomfortLevels,
-  themes as compulsionTheme,
-} from "../../data/compulsions.json";
 import DiscomfortButton from "../../components/DiscomfortButton";
 import {
   DiscomfortLevel,
@@ -21,135 +13,30 @@ import {
 } from "./styles";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
+import { reducer } from "./reducer";
+import { discomfortLevels as obsessionDiscomfortLevels } from "../../data/obsessions.json";
+import { discomfortLevels as compulsionDiscomfortLevels } from "../../data/compulsions.json";
+import { getInitialState, shouldIdentifyObsessions } from "./helpers";
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "setDiscomfortLevel":
-      return {
-        ...state,
-        themes: state.themes.map((theme, index) => {
-          if (index === action.themeIndex) {
-            return {
-              ...theme,
-              concerns: theme.concerns.map((concern, index) => {
-                if (index === action.concernIndex) {
-                  return {
-                    ...concern,
-                    discomfortLevel: action.discomfortLevel,
-                  };
-                }
-
-                return concern;
-              }),
-            };
-          }
-
-          return theme;
-        }),
-      };
-    case "setCurrentTheme":
-      if (action.isPrevious) {
-        return {
-          ...state,
-          currentTheme: action.currentTheme,
-          currentConcern: state.themes[action.currentTheme].concerns.length - 1,
-        };
-      }
-
-      return {
-        ...state,
-        currentTheme: action.currentTheme,
-        currentConcern: 0,
-      };
-    case "setCurrentConcern":
-      return {
-        ...state,
-        currentConcern: action.currentConcern,
-      };
-    default:
-      return state;
-  }
-};
+interface DiscomfortLevel {
+  level: number;
+  description: string;
+}
 
 const IdentifyConcerns = () => {
-  const shouldIdentifyObsessions =
-    window.location.pathname === "/identify-obsessions";
-
-  const initialState = {
-    isTestCompleted: false,
-    currentTheme: 0,
-    currentConcern: 0,
-  };
-
-  let discomfortLevels = [];
-
-  if (shouldIdentifyObsessions) {
-    const obsessionsState = localStorage.getItem("obsessionsState");
-
-    if (obsessionsState) {
-      const parsedObsessionsState = JSON.parse(obsessionsState);
-
-      if (parsedObsessionsState) {
-        initialState.themes = parsedObsessionsState.themes;
-        initialState.currentTheme = parsedObsessionsState.currentTheme;
-        initialState.currentConcern = parsedObsessionsState.currentConcern;
-        initialState.isTestCompleted = parsedObsessionsState.isTestCompleted;
-      }
-    } else {
-      initialState.themes = obsessionTheme.map((theme) => ({
-        title: theme.title,
-        concerns: theme.obsessions.map((obsession) => ({
-          concern: obsession,
-          discomfortLevel: null,
-        })),
-      }));
-    }
-
-    discomfortLevels = obsessionDiscomfortLevels;
-  } else {
-    const compulsionsState = localStorage.getItem("compulsionsState");
-
-    if (compulsionsState) {
-      const parsedCompulsionsState = JSON.parse(compulsionsState);
-
-      if (parsedCompulsionsState) {
-        initialState.themes = parsedCompulsionsState.themes;
-        initialState.currentTheme = parsedCompulsionsState.currentTheme;
-        initialState.currentConcern = parsedCompulsionsState.currentConcern;
-        initialState.isTestCompleted = parsedCompulsionsState.isTestCompleted;
-      }
-    } else {
-      initialState.themes = compulsionTheme.map((theme) => ({
-        title: theme.title,
-        concerns: theme.compulsions.map((compulsion) => ({
-          concern: compulsion,
-          discomfortLevel: null,
-        })),
-      }));
-    }
-
-    discomfortLevels = compulsionDiscomfortLevels;
-  }
-
+  const navigate = useNavigate();
+  const initialState = useMemo(() => getInitialState(), []);
   const [state, dispatch] = useReducer(reducer, initialState);
   const { themes, currentTheme, currentConcern } = state;
-
   const totalThemes = themes.length;
   const totalConcerns = themes[currentTheme].concerns.length;
-
   const theme = themes[currentTheme];
   const concern = themes[currentTheme].concerns[currentConcern];
-
   const isPreviousDisabled = currentTheme === 0 && currentConcern === 0;
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (shouldIdentifyObsessions) {
-      localStorage.setItem("obsessionsState", JSON.stringify(state));
-    } else {
-      localStorage.setItem("compulsionsState", JSON.stringify(state));
-    }
-  }, [state, shouldIdentifyObsessions]);
+  const isIdentifyingObsessions = shouldIdentifyObsessions();
+  const discomfortLevels: DiscomfortLevel[] = isIdentifyingObsessions
+    ? obsessionDiscomfortLevels
+    : compulsionDiscomfortLevels;
 
   const nextConcern = () => {
     if (currentConcern < totalConcerns - 1) {
@@ -161,6 +48,7 @@ const IdentifyConcerns = () => {
       if (currentTheme < totalThemes - 1) {
         dispatch({
           type: "setCurrentTheme",
+          isPrevious: false,
           currentTheme: currentTheme + 1,
         });
       }
@@ -185,7 +73,7 @@ const IdentifyConcerns = () => {
   };
 
   const restart = () => {
-    if (shouldIdentifyObsessions) {
+    if (isIdentifyingObsessions) {
       localStorage.removeItem("obsessionsState");
     } else {
       localStorage.removeItem("compulsionsState");
@@ -194,6 +82,14 @@ const IdentifyConcerns = () => {
     // TODO: Find a way so that the page doesn't need to be reloaded
     window.location.reload();
   };
+
+  useEffect(() => {
+    if (isIdentifyingObsessions) {
+      localStorage.setItem("obsessionsState", JSON.stringify(state));
+    } else {
+      localStorage.setItem("compulsionsState", JSON.stringify(state));
+    }
+  }, [state, isIdentifyingObsessions]);
 
   return (
     <Layout>
@@ -206,7 +102,7 @@ const IdentifyConcerns = () => {
             </ProgressLabel>
             <ProgressLabel isActive={currentConcern + 1 === 1}>
               {currentConcern + 1} of {totalConcerns}{" "}
-              {shouldIdentifyObsessions ? "obsessions" : "compulsions"}
+              {isIdentifyingObsessions ? "obsessions" : "compulsions"}
             </ProgressLabel>
           </LabelContainer>
           <div>
@@ -290,7 +186,7 @@ const IdentifyConcerns = () => {
                 <Button
                   state="success"
                   onClick={() => {
-                    if (shouldIdentifyObsessions) {
+                    if (isIdentifyingObsessions) {
                       navigate("/obsessions-report");
                     } else {
                       navigate("/compulsions-report");
@@ -309,16 +205,14 @@ const IdentifyConcerns = () => {
             Restart
           </Button>
           <hr />
-          <div>
-            {discomfortLevels.map((discomfortLevel) => (
-              <DiscomfortLevelInfoContainer>
-                <DiscomfortLevel level={discomfortLevel.level}>
-                  {discomfortLevel.level}
-                </DiscomfortLevel>
-                <div>{discomfortLevel.description}</div>
-              </DiscomfortLevelInfoContainer>
-            ))}
-          </div>
+          {discomfortLevels.map((discomfortLevel) => (
+            <DiscomfortLevelInfoContainer>
+              <DiscomfortLevel level={discomfortLevel.level}>
+                {discomfortLevel.level}
+              </DiscomfortLevel>
+              <div>{discomfortLevel.description}</div>
+            </DiscomfortLevelInfoContainer>
+          ))}
         </div>
       </Wrapper>
     </Layout>

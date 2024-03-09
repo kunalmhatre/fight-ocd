@@ -1,3 +1,4 @@
+import { StyleSheet } from "@react-pdf/renderer";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -91,6 +92,39 @@ const ButtonsContainer = styled.div`
   }
 `;
 
+const pdfContentStyles = StyleSheet.create({
+  page: {
+    padding: 32,
+  },
+  header: {
+    fontSize: 24,
+    margin: "16px 0",
+  },
+  body: {
+    fontSize: 12,
+    lineHeight: 1.5,
+  },
+  caption: {
+    fontSize: 12,
+    lineHeight: 1.5,
+    color: "grey",
+    margin: "6px 0",
+  },
+  subheader: {
+    fontSize: 18,
+    margin: "12px 0",
+  },
+  obsessions: {
+    paddingLeft: 24,
+  },
+  footer: {
+    fontSize: 12,
+    paddingTop: 24,
+    marginTop: 24,
+    borderTop: "1px solid grey",
+  },
+});
+
 export {
   Wrapper,
   Description,
@@ -99,4 +133,5 @@ export {
   DiscomfortLevelDescription,
   ThemesListItem,
   ConcernsListItem,
+  pdfContentStyles,
 };

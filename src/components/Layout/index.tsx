@@ -7,7 +7,11 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-const theme = {
+interface Theme {
+  [key: string]: string;
+}
+
+const theme: Theme = {
   primary: "#000000",
   border: "#838282",
   grey: "#808080",
