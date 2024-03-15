@@ -12,7 +12,7 @@ const DiscomfortButton = ({
   isSelected = false,
 }: DiscomfortButtonProps) => {
   return (
-    <StyledButton onClick={onClick} level={level} isSelected={isSelected}>
+    <StyledButton onClick={onClick} $level={level} $isSelected={isSelected}>
       {level}
     </StyledButton>
   );

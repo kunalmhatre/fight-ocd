@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 interface ButtonProps {
-  level: number;
-  isSelected?: boolean;
+  $level: number;
+  $isSelected?: boolean;
 }
 
 const Button = styled.button<ButtonProps>`
-  background-color: ${({ theme, level }) => {
-    switch (level) {
+  background-color: ${({ theme, $level }) => {
+    switch ($level) {
       case 1:
         return theme.discomfortLevel1;
       case 2:
@@ -22,8 +22,8 @@ const Button = styled.button<ButtonProps>`
         return theme.white;
     }
   }};
-  border: ${({ theme, isSelected }) =>
-    isSelected ? `5px solid ${theme.primary}` : `1px solid ${theme.border}`};
+  border: ${({ theme, $isSelected }) =>
+    $isSelected ? `5px solid ${theme.primary}` : `1px solid ${theme.border}`};
   border-radius: 50%;
   height: 50px;
   width: 50px;

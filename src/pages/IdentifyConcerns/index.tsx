@@ -3,9 +3,9 @@ import Layout from "../../components/Layout";
 import DiscomfortButton from "../../components/DiscomfortButton";
 import {
   DiscomfortLevel,
-  ProgressLabel,
+  ProgressIndicator,
   Wrapper,
-  LabelContainer,
+  ProgressIndicatorsContainer,
   Content,
   DiscomfortLevelInfoContainer,
   DiscomfortButtonsContainer,
@@ -96,15 +96,15 @@ const IdentifyConcerns = () => {
       <Wrapper>
         <div>
           <h2>{theme.title}</h2>
-          <LabelContainer>
-            <ProgressLabel isActive={currentConcern + 1 === 1}>
+          <ProgressIndicatorsContainer>
+            <ProgressIndicator $isActive={currentConcern + 1 === 1}>
               {currentTheme + 1} of {totalThemes} themes
-            </ProgressLabel>
-            <ProgressLabel isActive={currentConcern + 1 === 1}>
+            </ProgressIndicator>
+            <ProgressIndicator $isActive={currentConcern + 1 === 1}>
               {currentConcern + 1} of {totalConcerns}{" "}
               {isIdentifyingObsessions ? "obsessions" : "compulsions"}
-            </ProgressLabel>
-          </LabelContainer>
+            </ProgressIndicator>
+          </ProgressIndicatorsContainer>
           <div>
             <h1>{concern.concern}</h1>
             <Content>Choose your level of discomfort</Content>
@@ -205,9 +205,9 @@ const IdentifyConcerns = () => {
             Restart
           </Button>
           <hr />
-          {discomfortLevels.map((discomfortLevel) => (
-            <DiscomfortLevelInfoContainer>
-              <DiscomfortLevel level={discomfortLevel.level}>
+          {discomfortLevels.map((discomfortLevel, index) => (
+            <DiscomfortLevelInfoContainer key={index}>
+              <DiscomfortLevel $level={discomfortLevel.level}>
                 {discomfortLevel.level}
               </DiscomfortLevel>
               <div>{discomfortLevel.description}</div>

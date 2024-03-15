@@ -17,8 +17,8 @@ const Button = ({
   <StyledButton
     onClick={onClick}
     disabled={disabled}
-    variant={state === "default" ? "primary" : "secondary"}
-    state={state}
+    $variant={state === "default" ? "primary" : "secondary"}
+    $state={state}
     {...props}
   >
     {children}

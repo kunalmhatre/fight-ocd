@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 interface ButtonProps {
   disabled?: boolean;
-  variant?: "primary" | "secondary";
-  state?: "default" | "success" | "danger";
+  $variant?: "primary" | "secondary";
+  $state?: "default" | "success" | "danger";
 }
 
 const Button = styled.button<ButtonProps>`
@@ -12,8 +12,8 @@ const Button = styled.button<ButtonProps>`
   width: fit-content;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
-  border: ${({ theme, state }) => {
-    switch (state) {
+  border: ${({ theme, $state }) => {
+    switch ($state) {
       case "success":
         return `2px solid ${theme.green}`;
       case "danger":
@@ -22,8 +22,8 @@ const Button = styled.button<ButtonProps>`
         return `2px solid ${theme.primary}`;
     }
   }};
-  color: ${({ theme, state }) => {
-    switch (state) {
+  color: ${({ theme, $state }) => {
+    switch ($state) {
       case "success":
         return theme.green;
       case "danger":
@@ -33,8 +33,8 @@ const Button = styled.button<ButtonProps>`
     }
   }};
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
-  background-color: ${({ theme, variant }) => {
-    switch (variant) {
+  background-color: ${({ theme, $variant }) => {
+    switch ($variant) {
       case "secondary":
         return theme.white;
       default:

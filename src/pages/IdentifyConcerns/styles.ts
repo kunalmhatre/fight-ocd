@@ -35,15 +35,15 @@ const Wrapper = styled.div`
 `;
 
 interface DiscomfortLevelProps {
-  level: number;
+  $level: number;
 }
 
 const DiscomfortLevel = styled.div<DiscomfortLevelProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme, level }) => {
-    switch (level) {
+  background-color: ${({ theme, $level }) => {
+    switch ($level) {
       case 1:
         return theme.discomfortLevel1;
       case 2:
@@ -65,37 +65,37 @@ const DiscomfortLevel = styled.div<DiscomfortLevelProps>`
   min-width: 25px;
 `;
 
-interface ProgressLabelProps {
-  isActive?: boolean;
+interface ProgressIndicatorProps {
+  $isActive: boolean;
 }
 
-const ProgressLabel = styled.label<ProgressLabelProps>`
+const ProgressIndicator = styled.div<ProgressIndicatorProps>`
   width: fit-content;
-  opacity: ${({ isActive }) => (isActive ? 1 : 0.5)};
+  opacity: ${({ $isActive }) => ($isActive ? 1 : 0.5)};
   border-radius: 50px;
   border: 1px solid
-    ${({ theme, isActive }) => (isActive ? theme.white : theme.border)};
+    ${({ theme, $isActive }) => ($isActive ? theme.white : theme.border)};
   padding: 0.25rem 1rem;
-  color: ${({ theme, isActive }) => (isActive ? theme.white : theme.primary)};
-  background-color: ${({ theme, isActive }) =>
-    isActive ? theme.primary : theme.white};
+  color: ${({ theme, $isActive }) => ($isActive ? theme.white : theme.primary)};
+  background-color: ${({ theme, $isActive }) =>
+    $isActive ? theme.primary : theme.white};
 
   @media (max-width: 576px) {
     font-size: 0.75rem;
   }
 `;
 
-const LabelContainer = styled.div`
+const ProgressIndicatorsContainer = styled.div`
   display: flex;
 
-  label {
+  div {
     margin-right: 0.5rem;
   }
 
   @media (max-width: 576px) {
     flex-direction: column;
 
-    label:first-child {
+    div:first-child {
       margin-bottom: 0.5rem;
     }
   }
@@ -154,8 +154,8 @@ const ButtonsContainer = styled.div`
 export {
   Wrapper,
   DiscomfortLevel,
-  ProgressLabel,
-  LabelContainer,
+  ProgressIndicator,
+  ProgressIndicatorsContainer,
   Content,
   DiscomfortButtonsContainer,
   DiscomfortLevelInfoContainer,
