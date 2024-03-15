@@ -6,10 +6,6 @@ import {
   Wrapper,
   Description,
   ButtonsContainer,
-  DiscomfortLevel,
-  DiscomfortLevelDescription,
-  ThemesListItem,
-  ConcernsListItem,
   pdfContentStyles,
 } from "./styles";
 import { useNavigate } from "react-router-dom";
@@ -25,6 +21,7 @@ import {
 } from "@react-pdf/renderer";
 import moment from "moment";
 import { State, Theme } from "../IdentifyConcerns/reducer";
+import ConcernsList from "./components/ConcernsList";
 
 const Report = () => {
   const dateToday = moment().format("Do MMMM, YYYY");
@@ -69,113 +66,40 @@ const Report = () => {
     <Document>
       <Page style={pdfContentStyles.page} wrap>
         <View>
-          <Text style={pdfContentStyles.body}>{dateToday}</Text>
-          <View>
-            {filteredThemesWithDiscomfortLevel5.length > 0 && (
-              <>
-                <Text style={pdfContentStyles.header}>
-                  Needs immediate attention!
-                </Text>
-                <Text style={pdfContentStyles.body}>
-                  Discomfort Level: 5 (out of 5)
-                </Text>
-                <Text style={pdfContentStyles.caption}>
-                  {shouldShowObsessionsReport
-                    ? obsessionDiscomfortLevels[4].description
-                    : compulsionDiscomfortLevels[4].description}
-                </Text>
-                <View>
-                  {filteredThemesWithDiscomfortLevel5.map(
-                    (theme, themeIndex) => (
-                      <View key={themeIndex}>
-                        <Text style={pdfContentStyles.subheader}>{`${
-                          themeIndex + 1
-                        }. ${theme.title}`}</Text>
-                        <View style={pdfContentStyles.obsessions}>
-                          {theme.concerns.map((concern, concernIndex) => (
-                            <Text
-                              style={pdfContentStyles.body}
-                              key={concernIndex}
-                            >{`${concernIndex + 1}. ${concern.concern}`}</Text>
-                          ))}
-                        </View>
-                      </View>
-                    )
-                  )}
-                </View>
-              </>
-            )}
-          </View>
-          <View>
-            {filteredThemesWithDiscomfortLevel4.length > 0 && (
-              <>
-                <Text style={pdfContentStyles.header}>Needs attention</Text>
-                <Text style={pdfContentStyles.body}>
-                  Discomfort Level: 4 (out of 5)
-                </Text>
-                <Text style={pdfContentStyles.caption}>
-                  {shouldShowObsessionsReport
-                    ? obsessionDiscomfortLevels[3].description
-                    : compulsionDiscomfortLevels[3].description}
-                </Text>
-                <View>
-                  {filteredThemesWithDiscomfortLevel4.map(
-                    (theme, themeIndex) => (
-                      <View key={themeIndex}>
-                        <Text style={pdfContentStyles.subheader}>{`${
-                          themeIndex + 1
-                        }. ${theme.title}`}</Text>
-                        <View style={pdfContentStyles.obsessions}>
-                          {theme.concerns.map((concern, concernIndex) => (
-                            <Text
-                              style={pdfContentStyles.body}
-                              key={concernIndex}
-                            >{`${concernIndex + 1}. ${concern.concern}`}</Text>
-                          ))}
-                        </View>
-                      </View>
-                    )
-                  )}
-                </View>
-              </>
-            )}
-          </View>
-          <View>
-            {filteredThemesWithDiscomfortLevel3.length > 0 && (
-              <>
-                <Text style={pdfContentStyles.header}>
-                  Needs to be worked on before it gets worse
-                </Text>
-                <Text style={pdfContentStyles.body}>
-                  Discomfort Level: 3 (out of 5)
-                </Text>
-                <Text style={pdfContentStyles.caption}>
-                  {shouldShowObsessionsReport
-                    ? obsessionDiscomfortLevels[2].description
-                    : compulsionDiscomfortLevels[2].description}
-                </Text>
-                <View>
-                  {filteredThemesWithDiscomfortLevel3.map(
-                    (theme, themeIndex) => (
-                      <View key={themeIndex}>
-                        <Text style={pdfContentStyles.subheader}>{`${
-                          themeIndex + 1
-                        }. ${theme.title}`}</Text>
-                        <View style={pdfContentStyles.obsessions}>
-                          {theme.concerns.map((concern, concernIndex) => (
-                            <Text
-                              style={pdfContentStyles.body}
-                              key={concernIndex}
-                            >{`${concernIndex + 1}. ${concern.concern}`}</Text>
-                          ))}
-                        </View>
-                      </View>
-                    )
-                  )}
-                </View>
-              </>
-            )}
-          </View>
+          <Text style={pdfContentStyles.date}>{dateToday}</Text>
+          <ConcernsList
+            isForPdf
+            title="Needs immediate attention!"
+            discomfortLevel={5}
+            discomfortLevelDescription={
+              shouldShowObsessionsReport
+                ? obsessionDiscomfortLevels[4].description
+                : compulsionDiscomfortLevels[4].description
+            }
+            themes={filteredThemesWithDiscomfortLevel5}
+          />
+          <ConcernsList
+            isForPdf
+            title="Needs attention"
+            discomfortLevel={4}
+            discomfortLevelDescription={
+              shouldShowObsessionsReport
+                ? obsessionDiscomfortLevels[3].description
+                : compulsionDiscomfortLevels[3].description
+            }
+            themes={filteredThemesWithDiscomfortLevel4}
+          />
+          <ConcernsList
+            isForPdf
+            title="Needs to be worked on before it gets worse"
+            discomfortLevel={3}
+            discomfortLevelDescription={
+              shouldShowObsessionsReport
+                ? obsessionDiscomfortLevels[2].description
+                : compulsionDiscomfortLevels[2].description
+            }
+            themes={filteredThemesWithDiscomfortLevel3}
+          />
           <Text style={pdfContentStyles.footer}>
             Report generated by Fight OCD (
             <Link src="https://www.fightocd.org">https://www.fightocd.org</Link>
@@ -269,93 +193,40 @@ const Report = () => {
           <div>
             <p>{dateToday}</p>
             {filteredThemesWithDiscomfortLevel5.length > 0 && (
-              <>
-                <h2>Needs immediate attention!</h2>
-                <DiscomfortLevel>
-                  Discomfort Level: 5 (out of 5)
-                </DiscomfortLevel>
-                <DiscomfortLevelDescription>
-                  {shouldShowObsessionsReport
+              <ConcernsList
+                title="Needs immediate attention!"
+                discomfortLevel={5}
+                discomfortLevelDescription={
+                  shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[4].description
-                    : compulsionDiscomfortLevels[4].description}
-                </DiscomfortLevelDescription>
-                <ol>
-                  {filteredThemesWithDiscomfortLevel5.map(
-                    (theme, themeIndex) => (
-                      <ThemesListItem key={themeIndex}>
-                        <h3>{theme.title}</h3>
-                        <ol>
-                          {theme.concerns.map((concern, concernIndex) => (
-                            <ConcernsListItem key={concernIndex}>
-                              {concern.concern}
-                            </ConcernsListItem>
-                          ))}
-                        </ol>
-                      </ThemesListItem>
-                    )
-                  )}
-                </ol>
-                <hr />
-              </>
+                    : compulsionDiscomfortLevels[4].description
+                }
+                themes={filteredThemesWithDiscomfortLevel5}
+              />
             )}
             {filteredThemesWithDiscomfortLevel4.length > 0 && (
-              <>
-                <h2>Needs attention</h2>
-                <DiscomfortLevel>
-                  Discomfort Level: 4 (out of 5)
-                </DiscomfortLevel>
-                <DiscomfortLevelDescription>
-                  {shouldShowObsessionsReport
+              <ConcernsList
+                title="Needs attention"
+                discomfortLevel={4}
+                discomfortLevelDescription={
+                  shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[3].description
-                    : compulsionDiscomfortLevels[3].description}
-                </DiscomfortLevelDescription>
-                <ol>
-                  {filteredThemesWithDiscomfortLevel4.map(
-                    (theme, themeIndex) => (
-                      <ThemesListItem key={themeIndex}>
-                        <h3>{theme.title}</h3>
-                        <ol>
-                          {theme.concerns.map((concern, concernIndex) => (
-                            <ConcernsListItem key={concernIndex}>
-                              {concern.concern}
-                            </ConcernsListItem>
-                          ))}
-                        </ol>
-                      </ThemesListItem>
-                    )
-                  )}
-                </ol>
-                <hr />
-              </>
+                    : compulsionDiscomfortLevels[3].description
+                }
+                themes={filteredThemesWithDiscomfortLevel4}
+              />
             )}
             {filteredThemesWithDiscomfortLevel3.length > 0 && (
-              <>
-                <h2>Needs to be worked on before it gets worse</h2>
-                <DiscomfortLevel>
-                  Discomfort Level: 3 (out of 5)
-                </DiscomfortLevel>
-                <DiscomfortLevelDescription>
-                  {shouldShowObsessionsReport
+              <ConcernsList
+                title="Needs to be worked on before it gets worse"
+                discomfortLevel={3}
+                discomfortLevelDescription={
+                  shouldShowObsessionsReport
                     ? obsessionDiscomfortLevels[2].description
-                    : compulsionDiscomfortLevels[2].description}
-                </DiscomfortLevelDescription>
-                <ol>
-                  {filteredThemesWithDiscomfortLevel3.map(
-                    (theme, themeIndex) => (
-                      <ThemesListItem key={themeIndex}>
-                        <h3>{theme.title}</h3>
-                        <ol>
-                          {theme.concerns.map((concern, concernIndex) => (
-                            <ConcernsListItem key={concernIndex}>
-                              {concern.concern}
-                            </ConcernsListItem>
-                          ))}
-                        </ol>
-                      </ThemesListItem>
-                    )
-                  )}
-                </ol>
-              </>
+                    : compulsionDiscomfortLevels[2].description
+                }
+                themes={filteredThemesWithDiscomfortLevel3}
+              />
             )}
           </div>
         )}

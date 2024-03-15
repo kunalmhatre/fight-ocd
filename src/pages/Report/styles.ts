@@ -10,43 +10,9 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
   }
 
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    font-size: 2rem;
-  }
-
   hr {
     margin: 2.5rem 0;
   }
-`;
-
-const ThemesListItem = styled.li`
-  margin-bottom: 0.5rem;
-
-  &::marker {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-`;
-
-const ConcernsListItem = styled.li`
-  font-size: 1.25rem;
-  line-height: 1.5;
-`;
-
-const DiscomfortLevel = styled.p`
-  font-size: 1.25rem;
-  font-weight: 700;
-`;
-
-const DiscomfortLevelDescription = styled.p`
-  font-size: 1.25rem;
-  font-style: italic;
-  font-weight: 700;
-  color: ${({ theme }) => theme.grey};
 `;
 
 const Description = styled.p`
@@ -96,26 +62,9 @@ const pdfContentStyles = StyleSheet.create({
   page: {
     padding: 32,
   },
-  header: {
-    fontSize: 24,
-    margin: "16px 0",
-  },
-  body: {
+  date: {
     fontSize: 12,
     lineHeight: 1.5,
-  },
-  caption: {
-    fontSize: 12,
-    lineHeight: 1.5,
-    color: "grey",
-    margin: "6px 0",
-  },
-  subheader: {
-    fontSize: 18,
-    margin: "12px 0",
-  },
-  obsessions: {
-    paddingLeft: 24,
   },
   footer: {
     fontSize: 12,
@@ -125,13 +74,4 @@ const pdfContentStyles = StyleSheet.create({
   },
 });
 
-export {
-  Wrapper,
-  Description,
-  ButtonsContainer,
-  DiscomfortLevel,
-  DiscomfortLevelDescription,
-  ThemesListItem,
-  ConcernsListItem,
-  pdfContentStyles,
-};
+export { Wrapper, Description, ButtonsContainer, pdfContentStyles };
