@@ -9,7 +9,7 @@ import EvaluateYourself from "./pages/EvaluateYourself";
 import IdentifyConcerns from "./pages/IdentifyConcerns";
 import Report from "./pages/Report";
 import About from "./pages/About";
-import Contribute from "./pages/Contact";
+import Contribute from "./pages/Contribute";
 
 const router = createBrowserRouter([
   {
