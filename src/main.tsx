@@ -8,6 +8,8 @@ import "normalize.css";
 import EvaluateYourself from "./pages/EvaluateYourself";
 import IdentifyConcerns from "./pages/IdentifyConcerns";
 import Report from "./pages/Report";
+import About from "./pages/About";
+import Contribute from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "/compulsions-report",
     element: <Report />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contribute",
+    element: <Contribute />,
   },
 ]);
 
