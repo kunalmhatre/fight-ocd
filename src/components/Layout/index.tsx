@@ -36,7 +36,6 @@ const Layout = ({ children }: LayoutProps) => {
         <Footer>
           <nav>
             <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
             <Link to="/contribute">Contribute</Link>
           </nav>
         </Footer>
