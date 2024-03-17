@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
-import { ErrorBoundary } from "react-error-boundary";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "../index.css";
 import "normalize.css";
@@ -48,14 +47,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ErrorBoundary
-      fallback={<div>Something went wrong!</div>}
-      onError={(error: Error, info: { componentStack: string }) => {
-        console.error("error", error);
-        console.error("info", info);
-      }}
-    >
-      <RouterProvider router={router} />
-    </ErrorBoundary>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
