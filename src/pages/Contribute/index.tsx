@@ -46,10 +46,10 @@ const Contribute = () => (
         </ol>
       </Content>
       <Content>
-        Remember, every contribution, no matter how small, brings us one step
-        closer to our goal of empowering individuals to overcome OCD. Join us in
-        the fight today and become a valued member of the Fight OCD community.
-        Together, we can make a difference.
+        Remember, every contribution, no matter how small, helps us with the
+        mission of providing tools to sufferers fight OCD and help them live a
+        better life. Join us in the fight today and become a valued member of
+        the Fight OCD community. Together, we can make a difference.
       </Content>
     </Wrapper>
   </Layout>
