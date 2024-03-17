@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Header, Footer, Content, Wrapper } from "./styles";
 import { ThemeProvider } from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "../Link";
 
 interface LayoutProps {
   children: ReactNode;
@@ -25,23 +25,21 @@ const theme: Theme = {
   discomfortLevel5: "#C21A1A",
 };
 
-const Layout = ({ children }: LayoutProps) => {
-  const navigate = useNavigate();
-
-  return (
-    <ThemeProvider theme={theme}>
-      <Wrapper>
-        <Header onClick={() => navigate("/")}>Fight OCD</Header>
-        <Content>{children}</Content>
-        <Footer>
-          <nav>
-            <Link to="/about">About</Link>
-            <Link to="/contribute">Contribute</Link>
-          </nav>
-        </Footer>
-      </Wrapper>
-    </ThemeProvider>
-  );
-};
+const Layout = ({ children }: LayoutProps) => (
+  <ThemeProvider theme={theme}>
+    <Wrapper>
+      <Header>
+        <Link to="/">Fight OCD</Link>
+      </Header>
+      <Content>{children}</Content>
+      <Footer>
+        <nav>
+          <Link to="/about">About</Link>
+          <Link to="/contribute">Contribute</Link>
+        </nav>
+      </Footer>
+    </Wrapper>
+  </ThemeProvider>
+);
 
 export default Layout;

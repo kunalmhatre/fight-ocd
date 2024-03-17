@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import { Wrapper, Description, Message } from "./styles";
-import { ReactRouterLink } from "../../components/ReactRouterLink";
+import { Link } from "../../components/Link";
 
 const Home = () => {
   return (
@@ -10,9 +10,7 @@ const Home = () => {
         <Description>Tools to help you fight OCD.</Description>
 
         <nav>
-          <ReactRouterLink to="/evaluate-yourself">
-            Evaluate yourself
-          </ReactRouterLink>
+          <Link to="/evaluate-yourself">Evaluate yourself</Link>
         </nav>
         <Message>More tools coming soon.</Message>
       </Wrapper>

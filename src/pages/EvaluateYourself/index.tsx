@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
 import { Wrapper, Content, ButtonsContainer } from "./styles";
 import Button from "../../components/Button";
-import ExternalLink from "../../components/ExternalLink";
+import { Link } from "../../components/Link";
 
 const EvaluateYourself = () => {
   const navigate = useNavigate();
@@ -22,10 +22,10 @@ const EvaluateYourself = () => {
         </Content>
         <Content>
           The inspiration for this tool is taken from a book called{" "}
-          <ExternalLink href="https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl">
+          <Link to="https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl">
             Freedom from Obsessive Compulsive Disorder: A Personalized Recovery
             Program for Living with Uncertainty
-          </ExternalLink>{" "}
+          </Link>{" "}
           by Dr. Jonathan Grayson.
         </Content>
         <ButtonsContainer>

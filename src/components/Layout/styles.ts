@@ -38,8 +38,7 @@ const Footer = styled.footer`
   nav {
     padding: 2rem 3rem;
 
-    a {
-      color: ${({ theme }) => theme.primary};
+    span {
       font-size: 1.5rem;
       font-weight: 700;
       margin-right: 1rem;

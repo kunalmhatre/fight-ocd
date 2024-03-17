@@ -11,6 +11,11 @@ const Wrapper = styled.div`
 
   nav {
     margin-top: 4rem;
+
+    span {
+      font-size: 3rem;
+      font-weight: 700;
+    }
   }
 `;
 
