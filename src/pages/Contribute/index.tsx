@@ -1,4 +1,5 @@
 import Layout from "../../components/Layout";
+import { Link } from "../../components/Link";
 import { Wrapper, Content } from "./styles";
 
 const Contribute = () => (
@@ -36,7 +37,7 @@ const Contribute = () => (
           <li>
             <strong>Reach Out via Email:</strong> Prefer a more direct approach?
             Feel free to drop us an email at{" "}
-            <a href="mailto:contact@fightocd.org">contact@fightocd.org</a>{" "}
+            <Link to="mailto:contact@fightocd.org">contact@fightocd.org</Link>{" "}
             outlining how you'd like to contribute. Whether you have specific
             skills to offer or simply a desire to help, we'd love to hear from
             you. Send us a message, and let's explore how we can work together
