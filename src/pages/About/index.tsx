@@ -14,9 +14,12 @@ const About = () => (
       </Content>
       <Content>
         Living with OCD can feel like an endless uphill battle, but you don't
-        have to face it alone. Our mission is simple yet profound: to provide
-        support and tools to empower individuals in their fight against OCD. We
-        recognize that combating such a debilitating mental disorder can be
+        have to face it alone.{" "}
+        <strong>
+          Our mission is simple yet profound: to provide tools to empower
+          individuals in their fight against OCD
+        </strong>
+        . We recognize that combating such a debilitating mental disorder can be
         overwhelming, which is why we are here to join you in the battle.
       </Content>
       <Content>
