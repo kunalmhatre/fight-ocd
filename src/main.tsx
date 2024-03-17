@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "../index.css";
-import "normalize.css";
 import EvaluateYourself from "./pages/EvaluateYourself";
 import IdentifyConcerns from "./pages/IdentifyConcerns";
 import Report from "./pages/Report";
 import About from "./pages/About";
 import Contribute from "./pages/Contribute";
+import "../index.css";
+import "normalize.css";
 
 const router = createBrowserRouter([
   {
