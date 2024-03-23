@@ -40,15 +40,12 @@ const Content = styled.p`
 const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
 
   button:nth-child(1) {
     margin-bottom: 1rem;
   }
 
   @media only screen and (max-width: 576px) {
-    margin-top: 2rem;
-
     button:nth-child(1) {
       margin-bottom: 0.5rem;
     }

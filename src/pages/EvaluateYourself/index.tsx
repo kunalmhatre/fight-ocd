@@ -20,16 +20,6 @@ const EvaluateYourself = () => {
           any of the tests or for the report generation; therefore, you can be
           yourself while taking the tests.
         </Content>
-        <Content>
-          The inspiration for this tool is taken from a book called{" "}
-          <Link to="https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl">
-            Freedom from Obsessive Compulsive Disorder: A Personalized Recovery
-            Program for Living with Uncertainty
-          </Link>{" "}
-          by Dr. Jonathan Grayson. We have received permission from the author
-          of that book to use their work for this tool, and to note that the
-          author is not working with us.
-        </Content>
         <ButtonsContainer>
           <Button onClick={() => navigate("/identify-obsessions")}>
             Identify Obsessions
@@ -38,6 +28,17 @@ const EvaluateYourself = () => {
             Identify Compulsions
           </Button>
         </ButtonsContainer>
+        <Content>
+          The inspiration for this tool is taken from a book called{" "}
+          <Link to="https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl">
+            Freedom from Obsessive Compulsive Disorder: A Personalized Recovery
+            Program for Living with Uncertainty
+          </Link>{" "}
+          by Dr. Jonathan Grayson. We have received permission from the author
+          of that book to use their work for this tool, and to note that the
+          author is not working with us. We hight recommend anyone who is
+          suffering from OCD to read this book.
+        </Content>
       </Wrapper>
     </Layout>
   );
