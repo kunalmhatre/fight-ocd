@@ -10,6 +10,8 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 576px) {
+    padding-top: 1rem;
+
     h1 {
       font-size: 2rem;
       margin-bottom: 0.5rem;
