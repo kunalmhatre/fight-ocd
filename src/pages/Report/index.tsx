@@ -189,9 +189,9 @@ const Report = () => {
             Clear Data
           </Button>
         </ButtonsContainer>
-        <hr />
         {!isReportEmpty && !!concerns && (
           <div>
+            <hr />
             <p>{dateToday}</p>
             <ConcernsListsContainer>
               {filteredThemesWithDiscomfortLevel5.length > 0 && (
