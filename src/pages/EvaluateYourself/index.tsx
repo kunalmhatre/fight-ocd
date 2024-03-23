@@ -37,7 +37,7 @@ const EvaluateYourself = () => {
           by Dr. Jonathan Grayson. We have received permission from the author
           of that book to use their work for this tool, and to note that the
           author is not working with us. We highly recommend anyone who is
-          suffering from OCD to read this book.
+          suffering from OCD to read that book.
         </Content>
       </Wrapper>
     </Layout>
