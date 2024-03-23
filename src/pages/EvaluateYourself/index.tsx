@@ -26,7 +26,9 @@ const EvaluateYourself = () => {
             Freedom from Obsessive Compulsive Disorder: A Personalized Recovery
             Program for Living with Uncertainty
           </Link>{" "}
-          by Dr. Jonathan Grayson.
+          by Dr. Jonathan Grayson. We have received permission from the author
+          of that book to use their work for this tool, and to note that the
+          author is not working with us.
         </Content>
         <ButtonsContainer>
           <Button onClick={() => navigate("/identify-obsessions")}>
