@@ -6,6 +6,7 @@ interface ButtonProps {
 }
 
 const Button = styled.button<ButtonProps>`
+  color: ${({ theme }) => theme.primary};
   background-color: ${({ theme, $level }) => {
     switch ($level) {
       case 1:
@@ -35,11 +36,6 @@ const Button = styled.button<ButtonProps>`
 
   &:active {
     border: 5px solid ${({ theme }) => theme.primary};
-  }
-
-  @media only screen and (max-width: 576px) {
-    height: 40px;
-    width: 40px;
   }
 `;
 
