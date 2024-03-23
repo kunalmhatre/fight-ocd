@@ -145,6 +145,9 @@ const Report = () => {
           {!isReportEmpty && concerns && (
             <Button>
               <PDFDownloadLink
+                data-umami-event={`download-${
+                  shouldShowObsessionsReport ? "obsessions" : "compulsions"
+                }-report`}
                 document={<PDFContent />}
                 fileName={`${
                   shouldShowObsessionsReport ? "obsessions" : "compulsions"
