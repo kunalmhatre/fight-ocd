@@ -13,6 +13,19 @@ const Wrapper = styled.div`
   hr {
     margin: 2.5rem 0;
   }
+
+  @media only screen and (max-width: 576px) {
+    padding-top: 1rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      margin: 1.5rem 0;
+    }
+  }
 `;
 
 const Description = styled.p`
@@ -29,6 +42,8 @@ const Description = styled.p`
   }
 
   @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+    line-height: 1.75rem;
     width: 100%;
   }
 `;
@@ -54,6 +69,12 @@ const ButtonsContainer = styled.div`
 
     button:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    button {
+      margin-bottom: 0.5rem;
     }
   }
 `;

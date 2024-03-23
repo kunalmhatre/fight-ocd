@@ -9,6 +9,16 @@ const Wrapper = styled.div`
   h3 {
     font-size: 2rem;
   }
+
+  @media only screen and (max-width: 576px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const ThemesListItem = styled.li`
@@ -18,16 +28,31 @@ const ThemesListItem = styled.li`
     font-size: 2rem;
     font-weight: 700;
   }
+
+  @media only screen and (max-width: 576px) {
+    &::marker {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const ConcernsListItem = styled.li`
   font-size: 1.25rem;
   line-height: 1.5;
+
+  @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
 `;
 
 const DiscomfortLevel = styled.p`
   font-size: 1.25rem;
   font-weight: 700;
+
+  @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const DiscomfortLevelDescription = styled.p`
@@ -35,6 +60,10 @@ const DiscomfortLevelDescription = styled.p`
   font-style: italic;
   font-weight: 700;
   color: ${({ theme }) => theme.grey};
+
+  @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const pdfStyles = StyleSheet.create({

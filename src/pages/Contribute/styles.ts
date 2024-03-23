@@ -8,6 +8,15 @@ const Wrapper = styled.div`
     font-weight: 900;
     margin-bottom: 1rem;
   }
+
+  @media only screen and (max-width: 576px) {
+    padding-top: 1rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+  }
 `;
 
 const Content = styled.p`
@@ -24,6 +33,8 @@ const Content = styled.p`
   }
 
   @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+    line-height: 1.75rem;
     width: 100%;
   }
 `;
