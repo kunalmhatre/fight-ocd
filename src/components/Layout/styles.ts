@@ -15,8 +15,9 @@ const Header = styled.header`
   font-weight: 700;
   cursor: pointer;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 576px) {
     padding: 2rem 1.5rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -24,7 +25,7 @@ const Content = styled.main`
   flex-grow: 1;
   padding: 0 3rem;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 576px) {
     padding: 0 1.5rem;
   }
 `;
@@ -42,17 +43,22 @@ const Footer = styled.footer`
       font-size: 1.5rem;
       font-weight: 700;
       margin-right: 1rem;
-
-      @media only screen and (max-width: 480px) {
-        margin-right: 0;
-        margin-bottom: 1rem;
-      }
     }
+  }
 
-    @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 576px) {
+    margin-top: 2rem;
+
+    nav {
       display: flex;
       flex-direction: column;
       padding: 2rem 1.5rem;
+
+      span {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
     }
   }
 `;
