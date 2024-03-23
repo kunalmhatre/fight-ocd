@@ -36,6 +36,11 @@ const Button = styled.button<ButtonProps>`
   &:active {
     border: 5px solid ${({ theme }) => theme.primary};
   }
+
+  @media only screen and (max-width: 576px) {
+    height: 40px;
+    width: 40px;
+  }
 `;
 
 export { Button };

@@ -10,6 +10,7 @@ import {
   DiscomfortLevelInfoContainer,
   DiscomfortButtonsContainer,
   ButtonsContainer,
+  DiscomfortLevelDescription,
 } from "./styles";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
@@ -210,7 +211,9 @@ const IdentifyConcerns = () => {
               <DiscomfortLevel $level={discomfortLevel.level}>
                 {discomfortLevel.level}
               </DiscomfortLevel>
-              <div>{discomfortLevel.description}</div>
+              <DiscomfortLevelDescription>
+                {discomfortLevel.description}
+              </DiscomfortLevelDescription>
             </DiscomfortLevelInfoContainer>
           ))}
         </div>

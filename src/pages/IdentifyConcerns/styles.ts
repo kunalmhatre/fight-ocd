@@ -6,8 +6,9 @@ const Wrapper = styled.div`
     font-weight: 700;
     margin: 2rem 0 1rem 0;
 
-    @media (max-width: 576px) {
+    @media only screen and (max-width: 576px) {
       font-size: 1.5rem;
+      margin: 1rem 0 0.5rem 0;
     }
   }
 
@@ -16,7 +17,7 @@ const Wrapper = styled.div`
     align-items: center;
     font-size: 3rem;
     font-weight: 900;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
     width: 60%;
     min-height: 220px;
 
@@ -24,13 +25,17 @@ const Wrapper = styled.div`
       width: 100%;
     }
 
-    @media (max-width: 576px) {
-      font-size: 2.5rem;
+    @media only screen and (max-width: 576px) {
+      font-size: 2rem;
     }
   }
 
   hr {
     margin: 2.5rem 0;
+
+    @media only screen and (max-width: 576px) {
+      margin: 1.5rem 0;
+    }
   }
 `;
 
@@ -80,7 +85,7 @@ const ProgressIndicator = styled.div<ProgressIndicatorProps>`
   background-color: ${({ theme, $isActive }) =>
     $isActive ? theme.primary : theme.white};
 
-  @media (max-width: 576px) {
+  @media only screen and (max-width: 576px) {
     font-size: 0.75rem;
   }
 `;
@@ -92,7 +97,7 @@ const ProgressIndicatorsContainer = styled.div`
     margin-right: 0.5rem;
   }
 
-  @media (max-width: 576px) {
+  @media only screen and (max-width: 576px) {
     flex-direction: column;
 
     div:first-child {
@@ -106,7 +111,7 @@ const Content = styled.p`
   font-weight: 700;
   margin: 3rem 0 1rem 0;
 
-  @media (max-width: 576px) {
+  @media only screen and (max-width: 576px) {
     font-size: 1rem;
   }
 `;
@@ -144,6 +149,15 @@ const DiscomfortLevelInfoContainer = styled.div`
   margin-bottom: 1rem;
 `;
 
+const DiscomfortLevelDescription = styled.p`
+  margin: 0;
+  font-size: 1rem;
+
+  @media only screen and (max-width: 576px) {
+    font-size: 0.75rem;
+  }
+`;
+
 const ButtonsContainer = styled.div`
   button {
     margin-right: 1rem;
@@ -160,4 +174,5 @@ export {
   DiscomfortButtonsContainer,
   DiscomfortLevelInfoContainer,
   ButtonsContainer,
+  DiscomfortLevelDescription,
 };
