@@ -41,6 +41,11 @@ const Button = styled.button<ButtonProps>`
         return theme.primary;
     }
   }};
+
+  @media only screen and (max-width: 576px) {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
 `;
 
 export { Button };
