@@ -8,6 +8,7 @@ interface ButtonProps {
 
 const Button = styled.button<ButtonProps>`
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+  font-size: 1rem;
   font-weight: 700;
   width: fit-content;
   padding: 0.75rem 1.5rem;
