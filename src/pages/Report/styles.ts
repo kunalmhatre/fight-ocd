@@ -79,6 +79,12 @@ const ButtonsContainer = styled.div`
   }
 `;
 
+const ConcernsListsContainer = styled.div`
+  hr:last-child {
+    display: none;
+  }
+`;
+
 const pdfContentStyles = StyleSheet.create({
   page: {
     padding: 32,
@@ -95,4 +101,10 @@ const pdfContentStyles = StyleSheet.create({
   },
 });
 
-export { Wrapper, Description, ButtonsContainer, pdfContentStyles };
+export {
+  Wrapper,
+  Description,
+  ButtonsContainer,
+  ConcernsListsContainer,
+  pdfContentStyles,
+};
