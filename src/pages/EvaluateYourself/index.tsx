@@ -3,12 +3,20 @@ import Layout from "../../components/Layout";
 import { Wrapper, Content, ButtonsContainer } from "./styles";
 import Button from "../../components/Button";
 import { Link } from "../../components/Link";
+import { Helmet } from "react-helmet";
 
 const EvaluateYourself = () => {
   const navigate = useNavigate();
 
   return (
     <Layout>
+      <Helmet>
+        <title>Fight OCD - Evaluate Yourself</title>
+        <meta
+          name="description"
+          content="Identify your obsessions and compulsions that need attention."
+        />
+      </Helmet>
       <Wrapper>
         <h1>Evaluate yourself</h1>
         <Content>

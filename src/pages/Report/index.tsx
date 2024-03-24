@@ -23,6 +23,7 @@ import {
 import moment from "moment";
 import { State, Theme } from "../IdentifyConcerns/reducer";
 import ConcernsList from "./components/ConcernsList";
+import { Helmet } from "react-helmet";
 
 const Report = () => {
   const dateToday = moment().format("Do MMMM, YYYY");
@@ -113,6 +114,18 @@ const Report = () => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>
+          Fight OCD -{" "}
+          {shouldShowObsessionsReport ? "Obsessions" : "Compulsions"} Report
+        </title>
+        <meta
+          name="description"
+          content={`Download report of your ${
+            shouldShowObsessionsReport ? "obsessions" : "compulsions"
+          } that you can then share with a therapist (that treats OCD with ERP) to get help.`}
+        />
+      </Helmet>
       <Wrapper>
         <h1>
           {shouldShowObsessionsReport ? "Obsessions" : "Compulsions"} Report
