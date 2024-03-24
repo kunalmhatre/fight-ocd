@@ -11,7 +11,7 @@ const EvaluateYourself = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Fight OCD - Evaluate Yourself</title>
+        <title>Fight OCD - Evaluate yourself</title>
         <meta
           name="description"
           content="Identify your obsessions and compulsions that need attention."

@@ -1,13 +1,13 @@
-import { Helmet } from "react-helmet";
 import Layout from "../../components/Layout";
 import { Wrapper, Content } from "./styles";
+import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
 
 const About = () => (
   <Layout>
-    <Helmet>
-      <title>Fight OCD - About</title>
-      <meta name="description" content="Know more about Fight OCD." />
-    </Helmet>
+    {addMetaTagsViaHelmet({
+      title: "Fight OCD - About",
+      description: "Know more about Fight OCD.",
+    })}
     <Wrapper>
       <h1>About</h1>
       <Content>

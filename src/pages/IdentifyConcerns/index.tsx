@@ -18,7 +18,7 @@ import { reducer } from "./reducer";
 import { discomfortLevels as obsessionDiscomfortLevels } from "../../data/obsessions.json";
 import { discomfortLevels as compulsionDiscomfortLevels } from "../../data/compulsions.json";
 import { getInitialState, shouldIdentifyObsessions } from "./helpers";
-import { Helmet } from "react-helmet";
+import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
 
 interface DiscomfortLevel {
   level: number;
@@ -95,18 +95,14 @@ const IdentifyConcerns = () => {
 
   return (
     <Layout>
-      <Helmet>
-        <title>
-          Fight OCD - Identify{" "}
-          {isIdentifyingObsessions ? "Obsessions" : "Compulsions"}
-        </title>
-        <meta
-          name="description"
-          content={`Tool to help you identify your ${
-            isIdentifyingObsessions ? "obsessions" : "compulsions"
-          } that need attention.`}
-        />
-      </Helmet>
+      {addMetaTagsViaHelmet({
+        title: `Fight OCD - Identify your ${
+          isIdentifyingObsessions ? "obsessions" : "compulsions"
+        }`,
+        description: `Tool to help you identify your ${
+          isIdentifyingObsessions ? "obsessions" : "compulsions"
+        } that need attention.`,
+      })}
       <Wrapper>
         <div>
           <h2>{theme.title}</h2>
