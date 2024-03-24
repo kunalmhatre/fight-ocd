@@ -1,9 +1,14 @@
+import { Helmet } from "react-helmet";
 import Layout from "../../components/Layout";
 import { Link } from "../../components/Link";
 import { Wrapper, Content } from "./styles";
 
 const Contribute = () => (
   <Layout>
+    <Helmet>
+      <title>Fight OCD - Contribute</title>
+      <meta name="description" content="Join the fight against OCD." />
+    </Helmet>
     <Wrapper>
       <h1>Contribute</h1>
       <Content>Become a Warrior Against OCD!</Content>

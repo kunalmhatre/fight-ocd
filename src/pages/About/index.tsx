@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet";
 import Layout from "../../components/Layout";
 import { Wrapper, Content } from "./styles";
 
 const About = () => (
   <Layout>
+    <Helmet>
+      <title>Fight OCD - About</title>
+      <meta name="description" content="Know more about Fight OCD." />
+    </Helmet>
     <Wrapper>
       <h1>About</h1>
       <Content>
