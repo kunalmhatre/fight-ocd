@@ -50,6 +50,16 @@ const Contribute = () => (
             you. Send us a message, and let's explore how we can work together
             to fight OCD and bring hope to those in need.
           </li>
+          <li>
+            <strong>Collaborate on GitHub:</strong> Are you a developer
+            passionate about leveraging technology to make a meaningful impact
+            in mental health? Join us in our mission to combat OCD by
+            contributing your coding expertise to our{" "}
+            <Link to="https://github.com/kunalmhatre/fight-ocd">
+              open source project on GitHub
+            </Link>
+            .
+          </li>
         </ol>
       </Content>
       <Content>
