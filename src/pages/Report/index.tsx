@@ -152,11 +152,12 @@ const Report = () => {
         </Description>
         <ButtonsContainer>
           {!isReportEmpty && concerns && (
-            <Button>
+            <Button
+              data-umami-event={`download-${
+                shouldShowObsessionsReport ? "obsessions" : "compulsions"
+              }-report`}
+            >
               <PDFDownloadLink
-                data-umami-event={`download-${
-                  shouldShowObsessionsReport ? "obsessions" : "compulsions"
-                }-report`}
                 document={<PDFContent />}
                 fileName={`${
                   shouldShowObsessionsReport ? "obsessions" : "compulsions"
