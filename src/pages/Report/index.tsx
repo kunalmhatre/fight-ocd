@@ -173,6 +173,11 @@ const Report = () => {
             </Button>
           )}
           <Button
+            data-umami-event={`identify-${
+              shouldShowObsessionsReport ? "compulsions" : "obsessions"
+            }-after-${
+              shouldShowObsessionsReport ? "obsessions" : "compulsions"
+            }`}
             onClick={() =>
               navigate(
                 shouldShowObsessionsReport
@@ -186,6 +191,9 @@ const Report = () => {
               : "Identify Obsessions"}
           </Button>
           <Button
+            data-umami-event={`clear-${
+              shouldShowObsessionsReport ? "obsessions" : "compulsions"
+            }-data`}
             className="clear-data-button"
             onClick={() => {
               localStorage.removeItem(

@@ -29,10 +29,16 @@ const EvaluateYourself = () => {
           yourself while taking the tests.
         </Content>
         <ButtonsContainer>
-          <Button onClick={() => navigate("/identify-obsessions")}>
+          <Button
+            data-umami-event="identify-obsessions"
+            onClick={() => navigate("/identify-obsessions")}
+          >
             Identify Obsessions
           </Button>
-          <Button onClick={() => navigate("/identify-compulsions")}>
+          <Button
+            data-umami-event="identify-compulsions"
+            onClick={() => navigate("/identify-compulsions")}
+          >
             Identify Compulsions
           </Button>
         </ButtonsContainer>

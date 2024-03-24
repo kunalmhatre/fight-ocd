@@ -194,6 +194,9 @@ const IdentifyConcerns = () => {
               currentTheme === totalThemes - 1 &&
               concern.discomfortLevel && (
                 <Button
+                  data-umami-event={`generate-${
+                    isIdentifyingObsessions ? "obsessions" : "compulsions"
+                  }-report`}
                   state="success"
                   onClick={() => {
                     if (isIdentifyingObsessions) {
@@ -208,6 +211,9 @@ const IdentifyConcerns = () => {
               )}
           </ButtonsContainer>
           <Button
+            data-umami-event={`restart-identifying-${
+              isIdentifyingObsessions ? "obsessions" : "compulsions"
+            }`}
             onClick={restart}
             disabled={isPreviousDisabled}
             state="danger"
