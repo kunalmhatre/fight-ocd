@@ -1,27 +1,43 @@
-# React + TypeScript + Vite
+# Fight OCD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Fight OCD is an open-source React project aimed at providing resources and tools to aid in the fight against Obsessive-Compulsive Disorder (OCD).
 
-Currently, two official plugins are available:
+**Live:** https://fightocd.org
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup
+Run the following commands to set up Fight OCD on your local.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+#### Clone the repository
+```
+git clone https://github.com/kunalmhatre/fight-ocd.git
+```
+#### Change the working directory
+```
+cd fight-ocd
+```
+#### Install npm packages
+```
+npm install
+```
+#### Run local server
+```
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## How to contribute?
+We value your contributions to Fight OCD. Whether you've discovered a bug that needs fixing or have an idea for a new feature, we appreciate your involvement. Here's how you can contribute:
+
+### Reporting Issues or Proposing Features
+If you've found a bug or want to propose a new feature:
+1. **Check Existing Issues:** First, browse our issue tracker to see if the problem or feature request has already been reported. If not, proceed to the next step.
+2. **Create a New Issue:** If there isn't an existing issue, create a new one with all the necessary details. Include a clear description of the problem or feature request, along with any relevant information that can help us understand and address it effectively.
+
+### Working on Issues
+If you're interested in working on an existing issue:
+1. **Express Your Interest:** Drop a comment on the issue to let us know that you're interested in working on it. This helps prevent duplicate efforts and allows us to coordinate effectively.
+2. **Get in Touch:** Reach out to one of the project maintainers for further discussion and guidance on how to proceed with resolving the issue.
+
+### Contributing Code
+If you're new to contributing to open source projects or GitHub, check out the following GitHub documentation on getting started with contributing to projects on GitHub: https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project
+
+Thank you for considering contributing to Fight OCD. Your efforts help improve the project for everyone.
