@@ -1,6 +1,6 @@
 # Fight OCD
 
-Fight OCD is an open-source React project aimed at providing resources and tools to aid in the fight against Obsessive-Compulsive Disorder (OCD).
+Fight OCD is an open-source project aimed at providing tools to aid in the fight against Obsessive-Compulsive Disorder (OCD).
 
 **Live:** https://fightocd.org
 
