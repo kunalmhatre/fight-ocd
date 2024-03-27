@@ -29,8 +29,8 @@ We value your contributions to Fight OCD. Whether you've discovered a bug that n
 
 ### Reporting Issues or Proposing Features
 If you've found a bug or want to propose a new feature:
-1. **Check Existing Issues:** First, browse our issue tracker to see if the problem or feature request has already been reported. If not, proceed to the next step.
-2. **Create a New Issue:** If there isn't an existing issue, create a new one with all the necessary details. Include a clear description of the problem or feature request, along with any relevant information that can help us understand and address it effectively.
+1. **Check Existing Issues:** First, browse [our issue tracker](https://github.com/kunalmhatre/fight-ocd/issues) to see if the problem or feature request has already been reported. If not, proceed to the next step.
+2. **Create a New Issue:** If there isn't an existing issue, [create a new one](https://github.com/kunalmhatre/fight-ocd/issues/new) with all the necessary details. Include a clear description of the problem or feature request, along with any relevant information that can help us understand and address it effectively.
 
 ### Working on Issues
 If you're interested in working on an existing issue:
