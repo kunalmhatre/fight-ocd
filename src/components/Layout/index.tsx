@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Header, Footer, Content, Wrapper } from "./styles";
 import { ThemeProvider } from "styled-components";
 import { Link } from "../Link";
+import moment from "moment";
 
 interface LayoutProps {
   children: ReactNode;
@@ -35,7 +36,8 @@ const Layout = ({ children }: LayoutProps) => (
       <Footer>
         <nav>
           <Link to="/about">About</Link>
-          <Link to="/contribute">Contribute</Link>
+          <Link to="/contribute">Contribute</Link>© {moment().year()} Fight
+          OCD. All rights reserved.
         </nav>
       </Footer>
     </Wrapper>
