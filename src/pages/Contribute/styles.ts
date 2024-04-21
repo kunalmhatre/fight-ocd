@@ -39,4 +39,24 @@ const Content = styled.p`
   }
 `;
 
-export { Wrapper, Content };
+const WaysToContribute = styled.ol`
+  font-size: 1.25rem;
+  line-height: 2rem;
+  width: 40vw;
+
+  @media only screen and (max-width: 1200px) {
+    width: 60vw;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 70vw;
+  }
+
+  @media only screen and (max-width: 576px) {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    width: 100%;
+  }
+`;
+
+export { Wrapper, Content, WaysToContribute };

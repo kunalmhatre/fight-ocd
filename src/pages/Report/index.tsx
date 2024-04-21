@@ -187,7 +187,7 @@ const Report = () => {
             }
           >
             {shouldShowObsessionsReport
-              ? "Identity Compulsions"
+              ? "Identify Compulsions"
               : "Identify Obsessions"}
           </Button>
           <Button
