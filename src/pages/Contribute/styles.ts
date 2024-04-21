@@ -39,7 +39,7 @@ const Content = styled.p`
   }
 `;
 
-const WaysToContribute = styled.ol`
+const WaysToContribute = styled.div`
   font-size: 1.25rem;
   line-height: 2rem;
   width: 40vw;
