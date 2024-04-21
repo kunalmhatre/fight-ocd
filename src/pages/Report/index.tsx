@@ -143,7 +143,9 @@ const Report = () => {
               needs attention at this time. But if something is bothering you
               about yourself then you should consult a therapist and get
               yourself treated as soon as possible because mental health is as
-              important as physical health. We wish you well.
+              important as physical health. We wish you well. The data regarding
+              evaluation is stored in your browser and can be cleared by
+              clicking the "Clear Data" button.
             </>
           )}{" "}
           If you have not taken the test to identify your{" "}
