@@ -3,13 +3,13 @@ import { BrowserRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 
 describe("<Home />", () => {
-  it("should show the button for evaluation", () => {
+  it("should show the link for the test", () => {
     const { getByText } = render(
       <BrowserRouter>
         <Home />
       </BrowserRouter>
     );
 
-    expect(getByText("Evaluate yourself")).toBeInTheDocument();
+    expect(getByText("Test yourself")).toBeInTheDocument();
   });
 });
