@@ -16,7 +16,7 @@ const Home = () => {
         <Description>Tools to help you fight OCD.</Description>
 
         <nav>
-          <Link to="/evaluate-yourself">Evaluate yourself</Link>
+          <Link to="/test-yourself">Test yourself</Link>
         </nav>
         <Message>More tools coming soon.</Message>
       </Wrapper>

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import EvaluateYourself from "./pages/EvaluateYourself";
+import TestYourself from "./pages/TestYourself";
 import IdentifyConcerns from "./pages/IdentifyConcerns";
 import Report from "./pages/Report";
 import About from "./pages/About";
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/evaluate-yourself",
-    element: <EvaluateYourself />,
+    path: "/test-yourself",
+    element: <TestYourself />,
   },
   {
     path: "/identify-obsessions",

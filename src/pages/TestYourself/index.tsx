@@ -5,20 +5,20 @@ import Button from "../../components/Button";
 import { Link } from "../../components/Link";
 import { Helmet } from "react-helmet";
 
-const EvaluateYourself = () => {
+const TestYourself = () => {
   const navigate = useNavigate();
 
   return (
     <Layout>
       <Helmet>
-        <title>Fight OCD - Evaluate yourself</title>
+        <title>Fight OCD - Test yourself</title>
         <meta
           name="description"
           content="Identify your obsessions and compulsions that need attention."
         />
       </Helmet>
       <Wrapper>
-        <h1>Evaluate yourself</h1>
+        <h1>Test yourself</h1>
         <Content>
           The goal of this tool is to identify your obsessions and compulsions
           that needs attention. You will be given an option to download your
@@ -58,4 +58,4 @@ const EvaluateYourself = () => {
   );
 };
 
-export default EvaluateYourself;
+export default TestYourself;
