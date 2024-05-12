@@ -35,7 +35,7 @@ const Contribute = () => (
           <li>
             <strong>Join Our Discord Channel:</strong> Connect with like-minded
             individuals in{" "}
-            <Link to="https://discord.gg/ZUxkpMJC">our Discord community</Link>.
+            <Link to="https://discord.gg/eXTJm7xu">our Discord community</Link>.
             Share your experiences, exchange ideas, and collaborate on
             initiatives aimed at combating OCD. Together, we can amplify our
             efforts and make a difference in the lives of those affected by this
