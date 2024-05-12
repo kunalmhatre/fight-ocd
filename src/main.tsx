@@ -7,6 +7,7 @@ import IdentifyConcerns from "./pages/IdentifyConcerns";
 import Report from "./pages/Report";
 import About from "./pages/About";
 import Contribute from "./pages/Contribute";
+import Resources from "./pages/Resources";
 import "../index.css";
 import "normalize.css";
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/contribute",
     element: <Contribute />,
+  },
+  {
+    path: "/learn-about-ocd",
+    element: <Resources />,
   },
 ]);
 

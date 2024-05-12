@@ -10,11 +10,14 @@ const Wrapper = styled.div`
   }
 
   nav {
-    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
 
     span {
       font-size: 3rem;
       font-weight: 700;
+      margin-bottom: 2rem;
     }
   }
 
@@ -26,10 +29,11 @@ const Wrapper = styled.div`
     }
 
     nav {
-      margin-top: 2rem;
+      margin-top: 1rem;
 
       span {
         font-size: 2rem;
+        margin-bottom: 1rem;
       }
     }
   }
@@ -38,8 +42,11 @@ const Wrapper = styled.div`
 const Description = styled.p`
   font-size: 2rem;
   font-weight: 700;
+  padding-top: 0;
+  padding-bottom: 4rem;
 
   @media only screen and (max-width: 576px) {
+    padding-bottom: 2rem;
     font-size: 1.5rem;
   }
 `;

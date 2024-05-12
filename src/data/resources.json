@@ -1,0 +1,38 @@
+{
+  "watch": [
+    {
+      "title": "NOCD's Live Sessions",
+      "link": "https://www.youtube.com/@nocd3372/streams",
+      "description": "NOCD offers live sessions on YouTube where you can learn more about OCD and how to manage it."
+    },
+    {
+      "title": "IOCDF",
+      "link": "https://www.youtube.com/@IOCDF",
+      "description": "The International OCD Foundation's YouTube channel offers a variety of videos on OCD and related topics."
+    }
+  ],
+  "read": [
+    {
+      "title": "Freedom from Obsessive Compulsive Disorder: A Personalized Recovery Program for Living with Uncertainty by Dr. Jonathan Grayson",
+      "link": "https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl",
+      "description": "This book is a great resource for those looking to understand OCD and how to manage it."
+    },
+    {
+      "title": "The OCD Answer Book: Professional Answers to More Than 250 Top Questions about Obsessive-Compulsive Disorder",
+      "link": "https://www.amazon.com/gp/product/B0024CEZI0",
+      "description": "This book provides answers to common questions about OCD."
+    },
+    {
+      "title": "NOCD's Blog",
+      "link": "https://www.treatmyocd.com/learn/blog",
+      "description": "NOCD's blog offers a variety of articles on OCD and related topics. You can create a free account with them to get blog updates via email."
+    }
+  ],
+  "listen": [
+    {
+      "title": "The OCD Stories Podcast",
+      "link": "https://theocdstories.com/",
+      "description": "The OCD Stories podcast offers interviews with experts and individuals who have experienced OCD."
+    }
+  ]
+}
