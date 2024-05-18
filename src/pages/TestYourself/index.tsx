@@ -11,14 +11,14 @@ const TestYourself = () => {
   return (
     <Layout>
       <Helmet>
-        <title>Fight OCD - Test yourself</title>
+        <title>Fight OCD - Take a test for OCD</title>
         <meta
           name="description"
           content="Identify your obsessions and compulsions that need attention."
         />
       </Helmet>
       <Wrapper>
-        <h1>Test yourself</h1>
+        <h1>Test a test for OCD</h1>
         <Content>
           The goal of this tool is to identify your obsessions and compulsions
           that needs attention. You will be given an option to download your

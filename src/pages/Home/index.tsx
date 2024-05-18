@@ -16,7 +16,7 @@ const Home = () => {
         <Description>Tools to help you fight OCD.</Description>
 
         <nav>
-          <Link to="/test-yourself">Test yourself</Link>
+          <Link to="/take-a-test-for-ocd">Take a test for OCD</Link>
           <Link to="/learn-about-ocd">Learn about OCD</Link>
         </nav>
         <Message>More tools coming soon.</Message>

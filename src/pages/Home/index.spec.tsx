@@ -10,6 +10,6 @@ describe("<Home />", () => {
       </BrowserRouter>
     );
 
-    expect(getByText("Test yourself")).toBeInTheDocument();
+    expect(getByText("Take a test for OCD")).toBeInTheDocument();
   });
 });

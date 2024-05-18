@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/test-yourself",
+    path: "/take-a-test-for-ocd",
     element: <TestYourself />,
   },
   {
