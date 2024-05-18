@@ -218,44 +218,50 @@ const Report = () => {
             <p>{dateToday}</p>
             <ConcernsListsContainer>
               {filteredThemesWithDiscomfortLevel5.length > 0 && (
-                <ConcernsList
-                  title="Needs immediate attention!"
-                  discomfortLevel={5}
-                  discomfortLevelDescription={
-                    shouldShowObsessionsReport
-                      ? obsessionDiscomfortLevels[4].description
-                      : compulsionDiscomfortLevels[4].description
-                  }
-                  themes={filteredThemesWithDiscomfortLevel5}
-                />
+                <>
+                  <ConcernsList
+                    title="Needs immediate attention!"
+                    discomfortLevel={5}
+                    discomfortLevelDescription={
+                      shouldShowObsessionsReport
+                        ? obsessionDiscomfortLevels[4].description
+                        : compulsionDiscomfortLevels[4].description
+                    }
+                    themes={filteredThemesWithDiscomfortLevel5}
+                  />
+                  <hr />
+                </>
               )}
-              <hr />
               {filteredThemesWithDiscomfortLevel4.length > 0 && (
-                <ConcernsList
-                  title="Needs attention"
-                  discomfortLevel={4}
-                  discomfortLevelDescription={
-                    shouldShowObsessionsReport
-                      ? obsessionDiscomfortLevels[3].description
-                      : compulsionDiscomfortLevels[3].description
-                  }
-                  themes={filteredThemesWithDiscomfortLevel4}
-                />
+                <>
+                  <ConcernsList
+                    title="Needs attention"
+                    discomfortLevel={4}
+                    discomfortLevelDescription={
+                      shouldShowObsessionsReport
+                        ? obsessionDiscomfortLevels[3].description
+                        : compulsionDiscomfortLevels[3].description
+                    }
+                    themes={filteredThemesWithDiscomfortLevel4}
+                  />
+                  <hr />
+                </>
               )}
-              <hr />
               {filteredThemesWithDiscomfortLevel3.length > 0 && (
-                <ConcernsList
-                  title="Needs to be worked on before it gets worse"
-                  discomfortLevel={3}
-                  discomfortLevelDescription={
-                    shouldShowObsessionsReport
-                      ? obsessionDiscomfortLevels[2].description
-                      : compulsionDiscomfortLevels[2].description
-                  }
-                  themes={filteredThemesWithDiscomfortLevel3}
-                />
+                <>
+                  <ConcernsList
+                    title="Needs to be worked on before it gets worse"
+                    discomfortLevel={3}
+                    discomfortLevelDescription={
+                      shouldShowObsessionsReport
+                        ? obsessionDiscomfortLevels[2].description
+                        : compulsionDiscomfortLevels[2].description
+                    }
+                    themes={filteredThemesWithDiscomfortLevel3}
+                  />
+                  <hr />
+                </>
               )}
-              <hr />
             </ConcernsListsContainer>
           </div>
         )}
