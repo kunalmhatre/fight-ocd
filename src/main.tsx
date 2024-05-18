@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import TestYourself from "./pages/TestYourself";
+import Test from "./pages/Test";
 import IdentifyConcerns from "./pages/IdentifyConcerns";
 import Report from "./pages/Report";
 import About from "./pages/About";
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/take-a-test-for-ocd",
-    element: <TestYourself />,
+    element: <Test />,
   },
   {
     path: "/identify-obsessions",

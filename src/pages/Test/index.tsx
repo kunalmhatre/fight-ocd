@@ -5,7 +5,7 @@ import Button from "../../components/Button";
 import { Link } from "../../components/Link";
 import { Helmet } from "react-helmet";
 
-const TestYourself = () => {
+const Test = () => {
   const navigate = useNavigate();
 
   return (
@@ -58,4 +58,4 @@ const TestYourself = () => {
   );
 };
 
-export default TestYourself;
+export default Test;

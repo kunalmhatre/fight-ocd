@@ -1,12 +1,12 @@
-import TestYourself from "./index";
+import Test from "./index";
 import { BrowserRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 
-describe("<TestYourself />", () => {
+describe("<Test />", () => {
   it("should show button for identifying obsessions", () => {
     const { getByText } = render(
       <BrowserRouter>
-        <TestYourself />
+        <Test />
       </BrowserRouter>
     );
 
@@ -16,7 +16,7 @@ describe("<TestYourself />", () => {
   it("should show button for identifying compulsions", () => {
     const { getByText } = render(
       <BrowserRouter>
-        <TestYourself />
+        <Test />
       </BrowserRouter>
     );
 
