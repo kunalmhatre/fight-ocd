@@ -20,13 +20,20 @@ const Test = () => {
       <Wrapper>
         <h1>Test a test for OCD</h1>
         <Content>
-          The goal of this tool is to identify your obsessions and compulsions
-          that needs attention. You will be given an option to download your
-          report at the end of each test. You can share your reports with a
-          therapist who specializes in treating OCD using ERP therapy. We do not
-          ask for any of your personally identifiable information while taking
-          any of the tests or for the report generation; therefore, you can be
-          yourself while taking the tests.
+          The goal of these tests is to identify obsessions and compulsions that
+          need attention. The tests are comprehensive, so it will require some
+          time and dedication to complete. At the end of each test, you will
+          have the option to download your report. You can share your reports
+          with a therapist who specializes in treating OCD using ERP therapy. We
+          do not ask for any personally identifiable information during the
+          tests or for report generation. This test is derived from the book{" "}
+          <Link to="https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl">
+            Freedom from Obsessive Compulsive Disorder: A Personalized Recovery
+            Program for Living with Uncertainty
+          </Link>{" "}
+          by Dr. Jonathan Grayson. We have received permission from the author
+          to use his work for this test, but please note that he is not working
+          with us. We highly recommend his book to anyone suffering from OCD.
         </Content>
         <ButtonsContainer>
           <Button
@@ -42,17 +49,6 @@ const Test = () => {
             Identify Compulsions
           </Button>
         </ButtonsContainer>
-        <Content>
-          The inspiration for this tool is taken from a book called{" "}
-          <Link to="https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl">
-            Freedom from Obsessive Compulsive Disorder: A Personalized Recovery
-            Program for Living with Uncertainty
-          </Link>{" "}
-          by Dr. Jonathan Grayson. We have received permission from the author
-          of that book to use their work for this tool, and to note that the
-          author is not working with us. We highly recommend anyone who is
-          suffering from OCD to read that book.
-        </Content>
       </Wrapper>
     </Layout>
   );

@@ -99,7 +99,7 @@ const IdentifyConcerns = () => {
         title: `Fight OCD - Identify your ${
           isIdentifyingObsessions ? "obsessions" : "compulsions"
         }`,
-        description: `Tool to help you identify your ${
+        description: `Test to help you identify your ${
           isIdentifyingObsessions ? "obsessions" : "compulsions"
         } that need attention.`,
       })}
