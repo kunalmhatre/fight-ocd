@@ -1,9 +1,7 @@
-import { themes as obsessionTheme } from "../../data/obsessions.json";
-import { themes as compulsionTheme } from "../../data/compulsions.json";
-import { State } from "./reducer";
-
-export const shouldIdentifyObsessions = (): boolean =>
-  window.location.pathname === "/identify-obsessions";
+import { themes as obsessionTheme } from "../../../data/obsessions.json";
+import { themes as compulsionTheme } from "../../../data/compulsions.json";
+import { State } from "../reducer";
+import { shouldIdentifyObsessions } from "./shouldIdentifyObsessions";
 
 export const getInitialState = (): State => {
   const initialState: State = {
