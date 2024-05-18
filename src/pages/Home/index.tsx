@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import { Wrapper, Description, Message } from "./styles";
+import { Wrapper, Description } from "./styles";
 import { Link } from "../../components/Link";
 import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
 
@@ -19,7 +19,6 @@ const Home = () => {
           <Link to="/take-a-test-for-ocd">Take a test for OCD</Link>
           <Link to="/learn-about-ocd">Learn about OCD</Link>
         </nav>
-        <Message>More tools coming soon.</Message>
       </Wrapper>
     </Layout>
   );
