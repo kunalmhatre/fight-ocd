@@ -1,9 +1,9 @@
 import { themes as obsessionTheme } from "../../../data/obsessions.json";
 import { themes as compulsionTheme } from "../../../data/compulsions.json";
 import { State } from "../reducer";
-import { shouldIdentifyObsessions } from "./shouldIdentifyObsessions";
+import shouldIdentifyObsessions from "./shouldIdentifyObsessions";
 
-export const getInitialState = (): State => {
+const getInitialState = (): State => {
   const initialState: State = {
     isTestCompleted: false,
     currentTheme: 0,
@@ -57,3 +57,5 @@ export const getInitialState = (): State => {
 
   return initialState;
 };
+
+export default getInitialState;

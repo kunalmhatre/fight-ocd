@@ -5,7 +5,7 @@ interface TransformConcernsParams {
   discomfortLevel: number;
 }
 
-export const transformConcerns = ({
+const transformConcerns = ({
   concerns,
   discomfortLevel,
 }: TransformConcernsParams): Theme[] => {
@@ -41,3 +41,5 @@ export const transformConcerns = ({
 
   return filteredThemesWithDiscomfortLevel;
 };
+
+export default transformConcerns;

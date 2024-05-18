@@ -17,9 +17,9 @@ import { useNavigate } from "react-router-dom";
 import { reducer } from "./reducer";
 import { discomfortLevels as obsessionDiscomfortLevels } from "../../data/obsessions.json";
 import { discomfortLevels as compulsionDiscomfortLevels } from "../../data/compulsions.json";
-import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
-import { getInitialState } from "./helpers/getInitialState";
-import { shouldIdentifyObsessions } from "./helpers/shouldIdentifyObsessions";
+import addMetaTagsViaHelmet from "../../helpers/addMetaTags";
+import getInitialState from "./helpers/getInitialState";
+import shouldIdentifyObsessions from "./helpers/shouldIdentifyObsessions";
 
 interface DiscomfortLevel {
   level: number;

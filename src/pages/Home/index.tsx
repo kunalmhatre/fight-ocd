@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
 import { Wrapper, Description } from "./styles";
 import { Link } from "../../components/Link";
-import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
+import addMetaTagsViaHelmet from "../../helpers/addMetaTags";
 
 const Home = () => {
   return (

@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import { Wrapper, Content } from "./styles";
-import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
+import addMetaTagsViaHelmet from "../../helpers/addMetaTags";
 
 const About = () => (
   <Layout>

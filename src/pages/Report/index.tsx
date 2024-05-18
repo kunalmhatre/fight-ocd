@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { transformConcerns } from "./helpers/transformConcerns";
+import transformConcerns from "./helpers/transformConcerns";
 import {
   PDFDownloadLink,
   Document,
@@ -23,7 +23,7 @@ import {
 import moment from "moment";
 import { State, Theme } from "../IdentifyConcerns/reducer";
 import ConcernsList from "./components/ConcernsList";
-import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
+import addMetaTagsViaHelmet from "../../helpers/addMetaTags";
 
 const Report = () => {
   const dateToday = moment().format("Do MMMM, YYYY");

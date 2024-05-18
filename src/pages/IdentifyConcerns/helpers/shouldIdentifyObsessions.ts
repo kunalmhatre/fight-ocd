@@ -1,2 +1,4 @@
-export const shouldIdentifyObsessions = (): boolean =>
+const shouldIdentifyObsessions = (): boolean =>
   window.location.pathname === "/identify-obsessions";
+
+export default shouldIdentifyObsessions;

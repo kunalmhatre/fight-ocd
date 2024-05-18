@@ -1,7 +1,7 @@
 import Layout from "../../components/Layout";
 import { Link } from "../../components/Link";
 import { Wrapper, Content, WaysToContribute } from "./styles";
-import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
+import addMetaTagsViaHelmet from "../../helpers/addMetaTags";
 
 const Contribute = () => (
   <Layout>

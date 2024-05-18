@@ -5,7 +5,7 @@ interface AddMetaTagsViaHelmetParams {
   description: string;
 }
 
-export const addMetaTagsViaHelmet = ({
+const addMetaTagsViaHelmet = ({
   title,
   description,
 }: AddMetaTagsViaHelmetParams) => (
@@ -17,3 +17,5 @@ export const addMetaTagsViaHelmet = ({
     <meta property="og:description" content={description} />
   </Helmet>
 );
+
+export default addMetaTagsViaHelmet;

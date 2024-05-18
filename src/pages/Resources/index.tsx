@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout";
 import { Wrapper, Content, Description, ResourcesList } from "./styles";
-import { addMetaTagsViaHelmet } from "../../helpers/addMetaTags";
+import addMetaTagsViaHelmet from "../../helpers/addMetaTags";
 import resources from "../../data/resources.json";
 import { Link } from "@/components/Link";
 
