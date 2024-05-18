@@ -7,13 +7,12 @@ const Home = () => {
   return (
     <Layout>
       {addMetaTagsViaHelmet({
-        title: "Fight OCD - Free online platform to help you fight OCD",
-        description:
-          "Fight OCD is a free online platform to help you fight OCD.",
+        title: "Fight OCD - An online platform to help you fight OCD",
+        description: "Fight OCD is an online platform to help you fight OCD.",
       })}
       <Wrapper>
         <h1>Let's fight OCD!</h1>
-        <Description>Free online platform to help you fight OCD.</Description>
+        <Description>An online platform to help you fight OCD.</Description>
 
         <nav>
           <Link to="/take-a-test-for-ocd">Take a test for OCD</Link>
