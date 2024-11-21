@@ -2,37 +2,39 @@
   "watch": [
     {
       "title": "NOCD's Live Sessions",
-      "link": "https://www.youtube.com/@treatmyocd/streams",
-      "description": "NOCD offers live sessions on YouTube where you can learn more about OCD and how to manage it."
+      "link": "https://www.youtube.com/@treatmyocd/streams"
     },
     {
       "title": "IOCDF",
-      "link": "https://www.youtube.com/@IOCDF",
-      "description": "The International OCD Foundation's YouTube channel offers a variety of videos on OCD and related topics."
+      "link": "https://www.youtube.com/@IOCDF"
     }
   ],
   "read": [
     {
       "title": "Freedom from Obsessive Compulsive Disorder: A Personalized Recovery Program for Living with Uncertainty by Dr. Jonathan Grayson",
-      "link": "https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl",
-      "description": "This book is a great resource for those looking to understand OCD and how to manage it."
+      "link": "https://www.amazon.com/gp/product/042527389X?ie=UTF8&linkCode=sl1&tag=bestpunchingbag-20&linkId=4da9d6c36f1fdaeeb0065f07d9956129&language=en_US&ref_=as_li_ss_tl"
     },
     {
       "title": "The OCD Answer Book: Professional Answers to More Than 250 Top Questions about Obsessive-Compulsive Disorder",
-      "link": "https://www.amazon.com/gp/product/B0024CEZI0",
-      "description": "This book provides answers to common questions about OCD."
+      "link": "https://www.amazon.com/gp/product/B0024CEZI0"
+    },
+    {
+      "title": "The Mindfulness Workbook for OCD: A Guide to Overcoming Obsessions and Compulsions Using Mindfulness and Cognitive Behavioral Therapy (New Harbinger Self-Help Workbook)",
+      "link": "https://www.amazon.com/gp/product/1684035635"
+    },
+    {
+      "title": "Sexual Obsessions in Obsessive-Compulsive Disorder: A Step-by-Step, Definitive Guide to Understanding, Diagnosis, and Treatment",
+      "link": "https://www.amazon.com/gp/product/B07TTP1NQ6"
     },
     {
       "title": "NOCD's Blog",
-      "link": "https://www.treatmyocd.com/learn/blog",
-      "description": "NOCD's blog offers a variety of articles on OCD. You can create a free account with them to get updates about new blog posts via email."
+      "link": "https://www.treatmyocd.com/learn/blog"
     }
   ],
   "listen": [
     {
       "title": "The OCD Stories Podcast",
-      "link": "https://theocdstories.com/",
-      "description": "The OCD Stories podcast offers interviews with individuals who have experienced OCD."
+      "link": "https://theocdstories.com/"
     }
   ]
 }

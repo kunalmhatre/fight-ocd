@@ -1,12 +1,11 @@
 import Layout from "../../components/Layout";
-import { Wrapper, Content, Description, ResourcesList } from "./styles";
+import { Wrapper, Content, ResourcesList } from "./styles";
 import addMetaTagsViaHelmet from "../../helpers/addMetaTags";
 import resources from "../../data/resources.json";
 import { Link } from "@/components/Link";
 
 interface Resource {
   title: string;
-  description: string;
   link: string;
 }
 
@@ -36,7 +35,6 @@ const Resources = () => {
                   {resource.title}
                 </Link>
               </Content>
-              <Description>{resource.description}</Description>
             </li>
           ))}
         </ResourcesList>
@@ -49,7 +47,6 @@ const Resources = () => {
                   {resource.title}
                 </Link>
               </Content>
-              <Description>{resource.description}</Description>
             </li>
           ))}
         </ResourcesList>
@@ -62,7 +59,6 @@ const Resources = () => {
                   {resource.title}
                 </Link>
               </Content>
-              <Description>{resource.description}</Description>
             </li>
           ))}
         </ResourcesList>

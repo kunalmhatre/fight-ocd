@@ -53,16 +53,6 @@ const Content = styled.p`
   }
 `;
 
-const Description = styled(Content)`
-  margin-top: 0;
-  font-size: 1rem;
-  color: ${({ theme }) => theme.grey};
-
-  @media only screen and (max-width: 576px) {
-    font-size: 0.75rem;
-  }
-`;
-
 const ResourcesList = styled.ol`
   font-size: 1.25rem;
 
@@ -71,4 +61,4 @@ const ResourcesList = styled.ol`
   }
 `;
 
-export { Wrapper, Content, Description, ResourcesList };
+export { Wrapper, Content, ResourcesList };

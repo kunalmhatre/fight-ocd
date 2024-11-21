@@ -15,21 +15,18 @@ describe("Resources", () => {
   it("renders resources to read", () => {
     resources.read.forEach((resource) => {
       expect(screen.getByText(resource.title)).toBeInTheDocument();
-      expect(screen.getByText(resource.description)).toBeInTheDocument();
     });
   });
 
   it("renders resources to watch", () => {
     resources.watch.forEach((resource) => {
       expect(screen.getByText(resource.title)).toBeInTheDocument();
-      expect(screen.getByText(resource.description)).toBeInTheDocument();
     });
   });
 
   it("renders resources to listen", () => {
     resources.listen.forEach((resource) => {
       expect(screen.getByText(resource.title)).toBeInTheDocument();
-      expect(screen.getByText(resource.description)).toBeInTheDocument();
     });
   });
 });
