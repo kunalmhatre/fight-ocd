@@ -2,8 +2,6 @@
 
 Fight OCD is an online platform to help OCD sufferers fight OCD.
 
-**Live:** https://fightocd.org
-
 ## Setup
 
 Run the following commands to set up Fight OCD on your local.
